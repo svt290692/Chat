@@ -154,8 +154,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="459" />
-    <option name="y" value="59" />
+    <option name="x" value="490" />
+    <option name="y" value="45" />
     <option name="width" value="941" />
     <option name="height" value="651" />
   </component>
@@ -619,7 +619,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="459" y="59" width="941" height="651" extended-state="0" />
+    <frame x="490" y="45" width="941" height="651" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3121453" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
