@@ -1,4 +1,0 @@
-Chat
-====
-
-The chat
