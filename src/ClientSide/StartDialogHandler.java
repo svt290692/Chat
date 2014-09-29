@@ -17,6 +17,8 @@ public class StartDialogHandler implements StartDialogListener {
 
     @Override
     public void okClicked(String name, String password, String ipAddress, String port) {
+        //TODO check name and password
+        //if name and pasword valid
 
     }
 }
