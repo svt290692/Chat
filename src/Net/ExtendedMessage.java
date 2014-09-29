@@ -1,11 +1,14 @@
-package ClientSide;
+package Net;
+
+import com.jme3.network.AbstractMessage;
 
 import java.io.Serializable;
 
 /**
  * Created by svt on 27.09.2014.
  */
-public class ExtendedMessage implements Serializable{
+@com.jme3.network.serializing.Serializable
+public class ExtendedMessage extends AbstractMessage implements Serializable,ConnectSeance{
 
     private String command;
 
@@ -16,15 +19,15 @@ public class ExtendedMessage implements Serializable{
     public ExtendedMessage() {
     }
 
-    public String getCommand() {
+    public String getCmd() {
         return command;
     }
 
-    public String getMessage() {
+    public String getMsg() {
         return message;
     }
 
-    public Object getExtend() {
+    public Object getExtra() {
         return extend;
     }
 
@@ -65,7 +68,7 @@ public class ExtendedMessage implements Serializable{
 
     @Override
     public String toString() {
-        return "ClientSide.ExtendedMessage{" +
+        return "Net.ExtendedMessage{" +
                 "command='" + command + '\'' +
                 ", message='" + message + '\'' +
                 ", extend=" + extend +

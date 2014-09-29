@@ -11,4 +11,10 @@ public interface StartDialog {
      * @param Listener
      */
     public void setListener(StartDialogListener Listener);
+
+    public String getNameField();
+    public String getPasswordField();
+    public String getIPField();
+    public String getPortField();
+    public void setLabel(String text);
 }
