@@ -65,7 +65,7 @@ public class StartDialog extends JDialog {
 
         String IPAddress = IPAddressTextField.getText();
 
-        mListener.okClicked(this,name,password,IPAddress,
+        mListener.okClicked(this,name,new String(password),IPAddress,
                 portTextField.isEnabled() ? portTextField.getText() : null);
 
         dispose();

@@ -1,6 +1,7 @@
 package ClientSide.Interfaces;
 
 /**
+ * this is listener for chatMainWindow
  * Created by svt on 28.09.2014.
  */
 public interface ChatListener {
