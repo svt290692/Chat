@@ -16,5 +16,16 @@ public interface StartDialog {
     public String getPasswordField();
     public String getIPField();
     public String getPortField();
+
+    /**
+     * set text to label output
+     * @param text
+     */
     public void setLabel(String text);
+
+    /**
+     * set the port Enabled or disabled to input
+     * @param isEnabled
+     */
+    public void setPortEnabled(boolean isEnabled);
 }
