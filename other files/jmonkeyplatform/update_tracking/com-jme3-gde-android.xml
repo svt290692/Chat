@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="com.jme3.gde.android">
+    <module_version install_time="1407764160517" last="true" origin="installer" specification_version="3.0.10">
+        <file crc="1428819575" name="config/Modules/com-jme3-gde-android.xml"/>
+        <file crc="3612148692" name="modules/com-jme3-gde-android.jar"/>
+    </module_version>
+</module>

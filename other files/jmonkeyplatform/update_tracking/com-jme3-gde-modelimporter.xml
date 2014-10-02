@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="com.jme3.gde.modelimporter">
+    <module_version install_time="1407764165705" last="true" origin="installer" specification_version="3.0.10">
+        <file crc="822073789" name="config/Modules/com-jme3-gde-modelimporter.xml"/>
+        <file crc="3789345095" name="modules/com-jme3-gde-modelimporter.jar"/>
+    </module_version>
+</module>

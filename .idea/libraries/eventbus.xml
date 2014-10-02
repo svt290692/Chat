@@ -1,0 +1,48 @@
+<component name="libraryTable">
+  <library name="eventbus">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/eventbus.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/gluegen-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/j-ogg-oggd.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/j-ogg-vorbisd.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jbullet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jglfont-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jinput.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-android.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-blender.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-bullet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-desktop.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-effects.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-ios.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-jbullet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-jogg.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-jogl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-lwjgl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-networking.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-niftygui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-plugins.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jME3-terrain.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/joal.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jogl-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/launch4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/lwjgl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/nifty-default-controls.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/nifty.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/proguard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/retrace.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/stack-alloc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/vecmath.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/xmlpull-xpp3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/xstream.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jMonkeyEngine3-javadoc.zip!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/nifty-default-controls-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/nifty-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/other files/jmonkeyplatform/libs/jMonkeyEngine3-sources.zip!/" />
+    </SOURCES>
+  </library>
+</component>

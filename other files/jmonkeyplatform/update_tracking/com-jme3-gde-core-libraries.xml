@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="com.jme3.gde.core.libraries/1">
+    <module_version install_time="1407764132850" last="true" origin="installer" specification_version="3.0.10">
+        <file crc="2173140869" name="config/Modules/com-jme3-gde-core-libraries.xml"/>
+        <file crc="1109630420" name="modules/com-jme3-gde-core-libraries.jar"/>
+        <file crc="830042417" name="modules/ext/eventbus.jar"/>
+        <file crc="4023614106" name="modules/ext/gluegen-rt.jar"/>
+        <file crc="3896729957" name="modules/ext/j-ogg-oggd.jar"/>
+        <file crc="959875835" name="modules/ext/j-ogg-vorbisd.jar"/>
+        <file crc="2274643286" name="modules/ext/jbullet.jar"/>
+        <file crc="1456127413" name="modules/ext/jglfont-core.jar"/>
+        <file crc="2415061135" name="modules/ext/jinput.jar"/>
+        <file crc="2798429584" name="modules/ext/joal.jar"/>
+        <file crc="3880005475" name="modules/ext/jogl-all.jar"/>
+        <file crc="3012139663" name="modules/ext/lwjgl.jar"/>
+        <file crc="3557224325" name="modules/ext/nifty-default-controls.jar"/>
+        <file crc="1162009444" name="modules/ext/nifty-style-black.jar"/>
+        <file crc="3811463320" name="modules/ext/nifty.jar"/>
+        <file crc="1395320636" name="modules/ext/stack-alloc.jar"/>
+        <file crc="3972159023" name="modules/ext/vecmath.jar"/>
+        <file crc="3310616030" name="modules/ext/xmlpull-xpp3.jar"/>
+    </module_version>
+</module>

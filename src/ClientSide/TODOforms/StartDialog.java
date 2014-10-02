@@ -1,36 +1,33 @@
 package ClientSide.TODOforms;
 
-import ClientSide.Interfaces.StartDialogListener;
+import ClientSide.Interfaces.Gui.StartWindow;
+import ClientSide.Interfaces.OkCliedListener;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class StartDialog extends JDialog {
+public class StartDialog extends JDialog implements StartWindow {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField nameTextField;
-    private JPasswordField passwordPasswordField;
-    private JTextField IPAddressTextField;
-    private JTextField portTextField;
-    private JLabel LBL_service;
-    private JLabel LBL_name;
+    private JTextField TF_login;
+    private JTextField TF_password;
+    private JButton B_registration;
+    private JButton B_settings;
+    private JLabel LBL_welcome;
+    private JLabel LBL_login;
     private JLabel LBL_password;
-    private JLabel LBL_IPAddress;
-    private JLabel LBL_port;
 
-    StartDialogListener mListener;
+    ActionListener mListener;
 
-    public StartDialog(boolean showPort) {
-
+    public StartDialog() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
-        if(!showPort) portTextField.setEnabled(false);
-
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                mListener.actionPerformed(e);
                 onOK();
             }
         });
@@ -58,17 +55,6 @@ public class StartDialog extends JDialog {
     }
 
     private void onOK() {
-// add your code here
-
-        String name = nameTextField.getText();
-        char[] password = passwordPasswordField.getPassword();
-
-        String IPAddress = IPAddressTextField.getText();
-
-        mListener.okClicked(this,name,new String(password),IPAddress,
-                portTextField.isEnabled() ? portTextField.getText() : null);
-
-        dispose();
     }
 
     private void onCancel() {
@@ -76,16 +62,40 @@ public class StartDialog extends JDialog {
         dispose();
     }
 
-    public void setListener(StartDialogListener Listener) {
-        this.mListener = Listener;
-    }
-    /**
-     * just test
-     */
     public static void main(String[] args) {
-        StartDialog dialog = new StartDialog(false);
+        StartDialog dialog = new StartDialog();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
+    }
+
+    /**
+     * set listener to this window
+     *
+     * @param listener
+     */
+    @Override
+    public void setListener(ActionListener listener) {
+        mListener = listener;
+    }
+
+    @Override
+    public String getLoginField() {
+        return TF_login.getText();
+    }
+
+    @Override
+    public String getPasswordField() {
+        return TF_password.getText();
+    }
+
+    /**
+     * set text to label output
+     *
+     * @param text
+     */
+    @Override
+    public void setLabel(String text) {
+        LBL_welcome.setText(text);
     }
 }

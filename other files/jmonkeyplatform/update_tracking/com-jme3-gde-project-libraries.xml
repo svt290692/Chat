@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="com.jme3.gde.project.libraries/1">
+    <module_version install_time="1407764142929" last="true" origin="installer" specification_version="3.0.10">
+        <file crc="3367552415" name="config/Modules/com-jme3-gde-project-libraries.xml"/>
+        <file crc="830042417" name="libs/eventbus.jar"/>
+        <file crc="4023614106" name="libs/gluegen-rt.jar"/>
+        <file crc="3896729957" name="libs/j-ogg-oggd.jar"/>
+        <file crc="959875835" name="libs/j-ogg-vorbisd.jar"/>
+        <file crc="1832251068" name="libs/jME3-bullet-natives-android.jar"/>
+        <file crc="194966043" name="libs/jME3-bullet-natives.jar"/>
+        <file crc="1193590333" name="libs/jME3-lwjgl-natives.jar"/>
+        <file crc="2687928268" name="libs/jME3-openal-soft-natives-android.jar"/>
+        <file crc="2274643286" name="libs/jbullet.jar"/>
+        <file crc="1456127413" name="libs/jglfont-core.jar"/>
+        <file crc="2415061135" name="libs/jinput.jar"/>
+        <file crc="2798429584" name="libs/joal.jar"/>
+        <file crc="3880005475" name="libs/jogl-all.jar"/>
+        <file crc="3012139663" name="libs/lwjgl.jar"/>
+        <file crc="776979962" name="libs/nifty-default-controls-javadoc.jar"/>
+        <file crc="3557224325" name="libs/nifty-default-controls.jar"/>
+        <file crc="1742599452" name="libs/nifty-javadoc.jar"/>
+        <file crc="1162009444" name="libs/nifty-style-black.jar"/>
+        <file crc="3811463320" name="libs/nifty.jar"/>
+        <file crc="1395320636" name="libs/stack-alloc.jar"/>
+        <file crc="3972159023" name="libs/vecmath.jar"/>
+        <file crc="3310616030" name="libs/xmlpull-xpp3.jar"/>
+        <file crc="1483789276" name="modules/com-jme3-gde-project-libraries.jar"/>
+    </module_version>
+</module>

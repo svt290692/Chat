@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="com.jme3.gde.desktop.executables">
+    <module_version install_time="1407764161303" last="true" origin="installer" specification_version="3.0.10">
+        <file crc="3073737754" name="config/Modules/com-jme3-gde-desktop-executables.xml"/>
+        <file crc="3864095514" name="libs/bin/COPYING"/>
+        <file crc="3677563313" name="libs/bin/bin-linux/ld"/>
+        <file crc="955694418" name="libs/bin/bin-linux/windres"/>
+        <file crc="3130862799" name="libs/bin/bin-macosx/ld"/>
+        <file crc="4058396206" name="libs/bin/bin-macosx/readme.txt"/>
+        <file crc="2588518202" name="libs/bin/bin-macosx/windres"/>
+        <file crc="4030158906" name="libs/bin/bin-solaris-sparc/ld"/>
+        <file crc="1556896627" name="libs/bin/bin-solaris-sparc/windres"/>
+        <file crc="3165273293" name="libs/bin/bin-windows/ld.exe"/>
+        <file crc="2302391921" name="libs/bin/bin-windows/windres.exe"/>
+        <file crc="2209287696" name="libs/head/LICENSE.txt"/>
+        <file crc="644083805" name="libs/head/consolehead.o"/>
+        <file crc="539829747" name="libs/head/guihead.o"/>
+        <file crc="286068717" name="libs/head/head.o"/>
+        <file crc="2321582418" name="libs/launch4j.jar"/>
+        <file crc="2458868404" name="libs/manifest/uac.exe.manifest"/>
+        <file crc="393469221" name="libs/manifest/xp-themes.exe.manifest"/>
+        <file crc="550923491" name="libs/w32api/MinGW.LICENSE.txt"/>
+        <file crc="4236590493" name="libs/w32api/crt2.o"/>
+        <file crc="1074078826" name="libs/w32api/libadvapi32.a"/>
+        <file crc="2322848294" name="libs/w32api/libgcc.a"/>
+        <file crc="2045769127" name="libs/w32api/libkernel32.a"/>
+        <file crc="3972461994" name="libs/w32api/libmingw32.a"/>
+        <file crc="3818568607" name="libs/w32api/libmsvcrt.a"/>
+        <file crc="517893843" name="libs/w32api/libshell32.a"/>
+        <file crc="336081184" name="libs/w32api/libuser32.a"/>
+        <file crc="1971653858" name="libs/xstream.jar"/>
+        <file crc="1111749678" name="modules/com-jme3-gde-desktop-executables.jar"/>
+    </module_version>
+</module>

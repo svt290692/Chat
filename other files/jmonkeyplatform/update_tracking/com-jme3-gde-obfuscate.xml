@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="com.jme3.gde.obfuscate">
+    <module_version install_time="1407764152619" last="true" origin="installer" specification_version="3.0.10">
+        <file crc="1665148907" name="config/Modules/com-jme3-gde-obfuscate.xml"/>
+        <file crc="4255899265" name="libs/proguard.jar"/>
+        <file crc="3525168651" name="libs/retrace.jar"/>
+        <file crc="2983743591" name="modules/com-jme3-gde-obfuscate.jar"/>
+    </module_version>
+</module>

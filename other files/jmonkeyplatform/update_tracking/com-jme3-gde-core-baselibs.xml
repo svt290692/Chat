@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="com.jme3.gde.core.baselibs/1">
+    <module_version install_time="1407764133968" last="true" origin="installer" specification_version="3.0.10">
+        <file crc="3452542663" name="config/Modules/com-jme3-gde-core-baselibs.xml"/>
+        <file crc="428072970" name="modules/com-jme3-gde-core-baselibs.jar"/>
+        <file crc="2445684957" name="modules/ext/jME3-blender.jar"/>
+        <file crc="1151418538" name="modules/ext/jME3-core.jar"/>
+        <file crc="2767365958" name="modules/ext/jME3-desktop.jar"/>
+        <file crc="3199274896" name="modules/ext/jME3-effects.jar"/>
+        <file crc="1946354389" name="modules/ext/jME3-ios.jar"/>
+        <file crc="489272149" name="modules/ext/jME3-jbullet.jar"/>
+        <file crc="2632012778" name="modules/ext/jME3-jogg.jar"/>
+        <file crc="2646935802" name="modules/ext/jME3-jogl.jar"/>
+        <file crc="1193590333" name="modules/ext/jME3-lwjgl-natives.jar"/>
+        <file crc="2135403431" name="modules/ext/jME3-lwjgl.jar"/>
+        <file crc="619983707" name="modules/ext/jME3-networking.jar"/>
+        <file crc="2911949130" name="modules/ext/jME3-niftygui.jar"/>
+        <file crc="1797052784" name="modules/ext/jME3-plugins.jar"/>
+        <file crc="3810172399" name="modules/ext/jME3-terrain.jar"/>
+    </module_version>
+</module>

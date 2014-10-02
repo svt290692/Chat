@@ -30,13 +30,16 @@ public class ChatServerHandler implements ServerHandler,ProtocolParser {
 
     @Override
     public void messageReceived(HostedConnection hostedConnection, Message message) {
-        if(message instanceof ExtendedMessage){
-            ConnectSeance seance = (ConnectSeance)message;
-            //lets parse
-            //if registered hosted connection then parse else try to register else errorw
-            //TODO add code to try register if he unregistred
-            parse(seance);
-        }
+
+        System.out.println(message);
+        mServer.broadcast(message);
+//        if(message instanceof ExtendedMessage){
+//            ConnectSeance seance = (ConnectSeance)message;
+//            //lets parse
+//            //if registered hosted connection then parse else try to register else errorw
+//            //TODO add code to try register if he unregistred
+//            parse(seance);
+//        }
     }
 
     @Override

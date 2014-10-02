@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ClientSide.TODOforms.MainWindow">
+  <grid id="27dc6" binding="MainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="6195c" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="North"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <toolbar id="a8400">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <borderPainted value="false"/>
+              <enabled value="true"/>
+              <floatable value="false"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="3a146" class="javax.swing.JButton" binding="B_sendLS">
+                <constraints/>
+                <properties>
+                  <text value="Send private message"/>
+                </properties>
+              </component>
+              <hspacer id="a5136">
+                <constraints/>
+              </hspacer>
+              <component id="f07ad" class="javax.swing.JButton" binding="B_logOut">
+                <constraints/>
+                <properties>
+                  <text value="LogOut"/>
+                </properties>
+              </component>
+              <component id="7d7f6" class="javax.swing.JButton" binding="B_Exit">
+                <constraints/>
+                <properties>
+                  <text value="Exit"/>
+                </properties>
+              </component>
+            </children>
+          </toolbar>
+        </children>
+      </grid>
+      <grid id="19bb1" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <scrollpane id="66add">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="74b93" class="javax.swing.JList" binding="LIST_users">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
