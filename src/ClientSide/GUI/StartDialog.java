@@ -1,26 +1,25 @@
-package ClientSide.TODOforms;
+package ClientSide.GUI;
 
-import ClientSide.Interfaces.Gui.SettingsWindow;
+import ClientSide.Interfaces.Gui.Windows.StartWindow;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class SettingsDialog extends JDialog implements SettingsWindow{
+public class StartDialog extends JDialog implements StartWindow {
     private JPanel contentPane;
-
-
-
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField TF_IP;
-    private JTextField TF_port;
-    private JLabel LBL_settings;
-    private JLabel LBL_IP;
-    private JLabel LBL_port;
+    private JTextField TF_login;
+    private JTextField TF_password;
+    private JButton B_registration;
+    private JButton B_settings;
+    private JLabel LBL_welcome;
+    private JLabel LBL_login;
+    private JLabel LBL_password;
 
     ActionListener mListener;
 
-    public SettingsDialog() {
+    public StartDialog() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -55,8 +54,6 @@ public class SettingsDialog extends JDialog implements SettingsWindow{
     }
 
     private void onOK() {
-// add your code here
-//        dispose();
     }
 
     private void onCancel() {
@@ -65,28 +62,39 @@ public class SettingsDialog extends JDialog implements SettingsWindow{
     }
 
     public static void main(String[] args) {
-        SettingsDialog dialog = new SettingsDialog();
+        StartDialog dialog = new StartDialog();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
     }
 
+    /**
+     * set listener to this window
+     *
+     * @param listener
+     */
     @Override
-    public String getIP() {
-        return null;
+    public void setListener(ActionListener listener) {
+        mListener = listener;
     }
 
     @Override
-    public String getPort() {
-        return null;
+    public String getLoginField() {
+        return TF_login.getText();
     }
 
     @Override
-    public void setTopLabel(String text) {
-
+    public String getPasswordField() {
+        return TF_password.getText();
     }
+
+    /**
+     * set text to label output
+     *
+     * @param text
+     */
     @Override
-    public void setListener(ActionListener OkListener) {
-        mListener = OkListener;
+    public void setLabel(String text) {
+        LBL_welcome.setText(text);
     }
 }

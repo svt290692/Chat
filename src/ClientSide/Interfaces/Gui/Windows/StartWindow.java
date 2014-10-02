@@ -1,6 +1,4 @@
-package ClientSide.Interfaces.Gui;
-
-import ClientSide.Interfaces.OkCliedListener;
+package ClientSide.Interfaces.Gui.Windows;
 
 import java.awt.event.ActionListener;
 

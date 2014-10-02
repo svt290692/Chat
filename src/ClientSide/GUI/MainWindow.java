@@ -1,18 +1,15 @@
-package ClientSide.TODOforms;
+package ClientSide.GUI;
 
-import ClientSide.Interfaces.MainWindowListener;
+import ClientSide.Interfaces.Gui.Listeners.MainWindowListener;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by svt on 02.10.2014.
  */
-public class MainWindow implements ClientSide.Interfaces.Gui.MainWindow
+public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow
 {
     private JPanel MainPanel;
     private JButton B_sendLS;

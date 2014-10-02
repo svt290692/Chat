@@ -1,26 +1,25 @@
-package ClientSide.TODOforms;
+package ClientSide.GUI;
 
-import ClientSide.Interfaces.Gui.StartWindow;
-import ClientSide.Interfaces.OkCliedListener;
+import ClientSide.Interfaces.Gui.Windows.RegisterWindow;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class StartDialog extends JDialog implements StartWindow {
+public class RegisterDialog extends JDialog implements RegisterWindow{
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField TF_login;
-    private JTextField TF_password;
-    private JButton B_registration;
-    private JButton B_settings;
-    private JLabel LBL_welcome;
+    private JLabel LBL_registration;
     private JLabel LBL_login;
-    private JLabel LBL_password;
+    private JPasswordField PF_password;
+    private JLabel LBL_topPassword;
+    private JLabel LBL_confirmPassword;
+    private JPasswordField PF_confirmPassword;
 
     ActionListener mListener;
 
-    public StartDialog() {
+    public RegisterDialog() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -55,6 +54,8 @@ public class StartDialog extends JDialog implements StartWindow {
     }
 
     private void onOK() {
+
+//        dispose();
     }
 
     private void onCancel() {
@@ -63,39 +64,35 @@ public class StartDialog extends JDialog implements StartWindow {
     }
 
     public static void main(String[] args) {
-        StartDialog dialog = new StartDialog();
+        RegisterDialog dialog = new RegisterDialog();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
     }
 
-    /**
-     * set listener to this window
-     *
-     * @param listener
-     */
     @Override
-    public void setListener(ActionListener listener) {
-        mListener = listener;
-    }
-
-    @Override
-    public String getLoginField() {
+    public String getLogin() {
         return TF_login.getText();
     }
 
     @Override
-    public String getPasswordField() {
-        return TF_password.getText();
+    public boolean isPasswordsEquals() {
+        return (new String(PF_password.getPassword()).equals(
+                new String(PF_confirmPassword.getPassword())));
     }
 
-    /**
-     * set text to label output
-     *
-     * @param text
-     */
     @Override
-    public void setLabel(String text) {
-        LBL_welcome.setText(text);
+    public String getPassword() {
+        return new String(PF_password.getPassword());
+    }
+
+    @Override
+    public String getConfirmPassword() {
+        return new String(PF_confirmPassword.getPassword());
+    }
+
+    @Override
+    public void setListener(ActionListener listener) {
+        mListener = listener;
     }
 }

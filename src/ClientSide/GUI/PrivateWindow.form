@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ClientSide.TODOforms.PrivateWindow">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ClientSide.GUI.PrivateWindow">
   <grid id="27dc6" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -30,7 +30,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="c4e93" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+              <component id="c4e93" class="javax.swing.JTextField" binding="TF_message">
                 <constraints border-constraint="Center"/>
                 <properties/>
               </component>
@@ -54,7 +54,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="66639" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+              <component id="66639" class="javax.swing.JTextArea" binding="TA_chat">
                 <constraints/>
                 <properties/>
               </component>

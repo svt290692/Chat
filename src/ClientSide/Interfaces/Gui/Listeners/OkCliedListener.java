@@ -1,4 +1,4 @@
-package ClientSide.Interfaces;
+package ClientSide.Interfaces.Gui.Listeners;
 
 import javax.swing.*;
 

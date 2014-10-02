@@ -1,7 +1,7 @@
 package ClientSide;
 
-import ClientSide.Interfaces.Gui.StartWindow;
-import ClientSide.Interfaces.OkCliedListener;
+import ClientSide.Interfaces.Gui.Windows.StartWindow;
+import ClientSide.Interfaces.Gui.Listeners.OkCliedListener;
 
 /**
  * Created by svt on 29.09.2014.

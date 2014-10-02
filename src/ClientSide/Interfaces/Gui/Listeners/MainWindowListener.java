@@ -1,4 +1,4 @@
-package ClientSide.Interfaces;
+package ClientSide.Interfaces.Gui.Listeners;
 
 /**
  * Created by svt on 02.10.2014.

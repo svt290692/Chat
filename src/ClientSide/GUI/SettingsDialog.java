@@ -1,25 +1,26 @@
-package ClientSide.TODOforms;
+package ClientSide.GUI;
 
-import ClientSide.Interfaces.Gui.RegisterWindow;
+import ClientSide.Interfaces.Gui.Windows.SettingsWindow;
 
 import javax.swing.*;
 import java.awt.event.*;
 
-public class RegisterDialog extends JDialog implements RegisterWindow{
+public class SettingsDialog extends JDialog implements SettingsWindow{
     private JPanel contentPane;
+
+
+
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField TF_login;
-    private JLabel LBL_registration;
-    private JLabel LBL_login;
-    private JPasswordField PF_password;
-    private JLabel LBL_topPassword;
-    private JLabel LBL_confirmPassword;
-    private JPasswordField PF_confirmPassword;
+    private JTextField TF_IP;
+    private JTextField TF_port;
+    private JLabel LBL_settings;
+    private JLabel LBL_IP;
+    private JLabel LBL_port;
 
     ActionListener mListener;
 
-    public RegisterDialog() {
+    public SettingsDialog() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -54,7 +55,7 @@ public class RegisterDialog extends JDialog implements RegisterWindow{
     }
 
     private void onOK() {
-
+// add your code here
 //        dispose();
     }
 
@@ -64,35 +65,28 @@ public class RegisterDialog extends JDialog implements RegisterWindow{
     }
 
     public static void main(String[] args) {
-        RegisterDialog dialog = new RegisterDialog();
+        SettingsDialog dialog = new SettingsDialog();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
     }
 
     @Override
-    public String getLogin() {
-        return TF_login.getText();
+    public String getIP() {
+        return null;
     }
 
     @Override
-    public boolean isPasswordsEquals() {
-        return (new String(PF_password.getPassword()).equals(
-                new String(PF_confirmPassword.getPassword())));
+    public String getPort() {
+        return null;
     }
 
     @Override
-    public String getPassword() {
-        return new String(PF_password.getPassword());
-    }
+    public void setTopLabel(String text) {
 
-    @Override
-    public String getConfirmPassword() {
-        return new String(PF_confirmPassword.getPassword());
     }
-
     @Override
-    public void setListener(ActionListener listener) {
-        mListener = listener;
+    public void setListener(ActionListener OkListener) {
+        mListener = OkListener;
     }
 }

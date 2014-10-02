@@ -1,4 +1,4 @@
-package ClientSide.Interfaces.Gui;
+package ClientSide.Interfaces.Gui.Windows;
 
 import java.awt.event.ActionListener;
 

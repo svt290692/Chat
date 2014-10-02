@@ -1,6 +1,6 @@
-package ClientSide.Interfaces.Gui;
+package ClientSide.Interfaces.Gui.Windows;
 
-import ClientSide.Interfaces.MainWindowListener;
+import ClientSide.Interfaces.Gui.Listeners.MainWindowListener;
 
 /**
  * Created by svt on 02.10.2014.
