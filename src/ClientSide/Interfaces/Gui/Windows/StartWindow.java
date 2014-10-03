@@ -1,5 +1,7 @@
 package ClientSide.Interfaces.Gui.Windows;
 
+import ClientSide.Interfaces.Gui.Listeners.StartDialogListener;
+
 import java.awt.event.ActionListener;
 
 /**
@@ -10,7 +12,7 @@ public interface StartWindow {
      * set listener to this window
      * @param Listener
      */
-    public void setListener(ActionListener Listener);
+    public void setListener(StartDialogListener Listener);
 
     public String getLoginField();
     public String getPasswordField();

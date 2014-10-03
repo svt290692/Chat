@@ -8,11 +8,18 @@ import com.jme3.network.AbstractMessage;
 public class PrivateMessage extends AbstractMessage {
     private String message;
 
+    private String recipient;
+
     public PrivateMessage() {
     }
 
     public PrivateMessage(String message) {
         this.message = message;
+    }
+
+    public PrivateMessage(String message, String recipient) {
+        this.message = message;
+        this.recipient = recipient;
     }
 
     public String getMessage() {
@@ -23,10 +30,19 @@ public class PrivateMessage extends AbstractMessage {
         this.message = message;
     }
 
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
+    }
+
     @Override
     public String toString() {
         return "PrivateMessage{" +
                 "message='" + message + '\'' +
+                ", recipient='" + recipient + '\'' +
                 '}';
     }
 
@@ -38,12 +54,15 @@ public class PrivateMessage extends AbstractMessage {
         PrivateMessage that = (PrivateMessage) o;
 
         if (message != null ? !message.equals(that.message) : that.message != null) return false;
+        if (recipient != null ? !recipient.equals(that.recipient) : that.recipient != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        return message != null ? message.hashCode() : 0;
+        int result = message != null ? message.hashCode() : 0;
+        result = 31 * result + (recipient != null ? recipient.hashCode() : 0);
+        return result;
     }
 }

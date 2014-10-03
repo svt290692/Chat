@@ -34,7 +34,7 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                mListener.sendMessage(TF_message.getText(),LBL_nameUser.getText());
             }
         });
     }

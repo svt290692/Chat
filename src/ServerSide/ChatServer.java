@@ -1,6 +1,6 @@
 package ServerSide;
 
-import ClientSide.MyMessage;
+
 import com.jme3.network.Network;
 import com.jme3.network.Server;
 import com.jme3.network.serializing.Serializer;
@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class ChatServer {
         static{
-            Serializer.registerClasses(MyMessage.class);
+
         }
     Server server;
 

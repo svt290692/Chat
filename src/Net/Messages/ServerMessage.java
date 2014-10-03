@@ -1,10 +1,18 @@
 package Net.Messages;
 
+import java.lang.reflect.Type;
+
 /**
  * Created by svt on 02.10.2014.
  */
 public class ServerMessage {
     private String message;
+    private TypeMessage type;
+
+    public enum TypeMessage{
+        ALLOW_REGISTRATION,
+        DENIED_REGISTRATION;
+    }
 
     public ServerMessage() {
     }
@@ -12,6 +20,14 @@ public class ServerMessage {
     public ServerMessage(String message) {
 
         this.message = message;
+    }
+
+    public TypeMessage getType() {
+        return type;
+    }
+
+    public void setType(TypeMessage type) {
+        this.type = type;
     }
 
     public String getMessage() {

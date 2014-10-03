@@ -1,12 +1,13 @@
 package ClientSide;
 
+import ClientSide.Interfaces.Gui.Listeners.OkClickedListener;
+import ClientSide.Interfaces.Gui.Listeners.StartDialogListener;
 import ClientSide.Interfaces.Gui.Windows.StartWindow;
-import ClientSide.Interfaces.Gui.Listeners.OkCliedListener;
 
 /**
  * Created by svt on 29.09.2014.
  */
-public class StartDialogHandler implements OkCliedListener {
+public class StartDialogHandler implements StartDialogListener {
     private final StartWindow mDialog;
 
     public StartDialogHandler(StartWindow mDialog) {
@@ -19,5 +20,19 @@ public class StartDialogHandler implements OkCliedListener {
     @Override
     public void onOK() {
 
+    }
+
+    @Override
+    public void settingsClicked() {
+
+    }
+
+    @Override
+    public void registrationClicked() {
+
+    }
+    private boolean tryConnection(){
+
+        return false;
     }
 }
