@@ -3,10 +3,12 @@ package ClientSide.GUI;
 import ClientSide.Interfaces.Gui.Listeners.PrivateWindowListener;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 
 /**
  * Created by svt on 02.10.2014.
@@ -20,11 +22,13 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
 
     PrivateWindowListener mListener;
 
+    JFrame MainFrame;
+
     public PrivateWindow() {
-        JFrame frame = new JFrame();
-        frame.setContentPane(mainPanel);
-        frame.pack();
-        frame.setVisible(true);
+        MainFrame = new JFrame();
+        MainFrame.setContentPane(mainPanel);
+        MainFrame.setModalExclusionType(Dialog.ModalExclusionType.NO_EXCLUDE);
+        MainFrame.pack();
 
         B_send.addActionListener(new ActionListener() {
             /**
@@ -34,7 +38,7 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                mListener.sendMessage(TF_message.getText(),LBL_nameUser.getText());
+                mListener.MessageWasInput(TF_message.getText(), LBL_nameUser.getText());
             }
         });
     }
@@ -79,5 +83,15 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
     @Override
     public void setListener(PrivateWindowListener listener) {
         mListener = listener;
+    }
+
+    @Override
+    public JFrame getFrame() {
+        return MainFrame;
+    }
+
+    @Override
+    public void show() {
+        MainFrame.setVisible(true);
     }
 }

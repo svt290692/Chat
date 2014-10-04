@@ -8,5 +8,4 @@ import ClientSide.Interfaces.Gui.Listeners.PrivateWindowListener;
  */
 public interface WindowsHandler extends PrivateWindowListener,MainWindowListener{
     void showMaiWindow();
-    void showPrivateWindow(String login);
 }

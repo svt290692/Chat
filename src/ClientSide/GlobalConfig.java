@@ -16,6 +16,9 @@ public class GlobalConfig implements Configuration{
     }
 
     private GlobalConfig() {
+        //TODO
+        ip = "127.0.0.1";
+        port = 5511;
     }
 
     @Override

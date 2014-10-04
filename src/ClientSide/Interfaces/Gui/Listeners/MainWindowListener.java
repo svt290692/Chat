@@ -6,6 +6,5 @@ package ClientSide.Interfaces.Gui.Listeners;
 public interface MainWindowListener {
     void onMainWindowExit();
     void onLogOut();
-    void requestPrivateChat(Object when);
-
+    void requestPrivateChat(String when);
 }

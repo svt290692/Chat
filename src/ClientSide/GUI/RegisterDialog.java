@@ -1,5 +1,6 @@
 package ClientSide.GUI;
 
+import ClientSide.Interfaces.Gui.Listeners.OkClickedListener;
 import ClientSide.Interfaces.Gui.Windows.RegisterWindow;
 
 import javax.swing.*;
@@ -17,7 +18,7 @@ public class RegisterDialog extends JDialog implements RegisterWindow{
     private JLabel LBL_confirmPassword;
     private JPasswordField PF_confirmPassword;
 
-    ActionListener mListener;
+    OkClickedListener mListener;
 
     public RegisterDialog() {
         setContentPane(contentPane);
@@ -26,7 +27,7 @@ public class RegisterDialog extends JDialog implements RegisterWindow{
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                mListener.actionPerformed(e);
+                mListener.onOK();
                 onOK();
             }
         });
@@ -92,7 +93,7 @@ public class RegisterDialog extends JDialog implements RegisterWindow{
     }
 
     @Override
-    public void setListener(ActionListener listener) {
+    public void setListener(OkClickedListener listener) {
         mListener = listener;
     }
 }

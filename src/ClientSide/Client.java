@@ -1,8 +1,9 @@
 package ClientSide;
 
-import ClientSide.Interfaces.ClientHandler;
 import ClientSide.Interfaces.ConnectionClient;
 import Net.Messages.PrivateMessage;
+import com.jme3.network.ClientStateListener;
+import com.jme3.network.MessageListener;
 import com.jme3.network.Network;
 
 /**
@@ -12,11 +13,11 @@ public class Client implements ConnectionClient{
 
     private String curIP;
     private int curPort;
-    boolean isConnect;
 
     private String lastConnectError;
 
-    private ClientHandler mHandler;
+    private ClientStateListener mStateListener;
+    private MessageListener mMessageListener;
 
     private com.jme3.network.Client client;
 
@@ -25,8 +26,8 @@ public class Client implements ConnectionClient{
         this.curPort = curPort;
     }
 
-    public Client(ClientHandler mHandler, int curPort, String curIP) {
-        this.mHandler = mHandler;
+    public Client(ClientStateListener mHandler, int curPort, String curIP) {
+        this.mStateListener = mHandler;
         this.curPort = curPort;
         this.curIP = curIP;
     }
@@ -36,8 +37,6 @@ public class Client implements ConnectionClient{
 
         try{
             client = Network.connectToServer(curIP,curPort);
-            client.addMessageListener(mHandler);
-            client.addClientStateListener(mHandler);
         }catch (Exception e){
             lastConnectError = e.getMessage();
             return false;
@@ -50,13 +49,8 @@ public class Client implements ConnectionClient{
     }
 
     @Override
-    public void sendMessage(String message, String where) {
-        client.send(new PrivateMessage(message,where));
-    }
-
-    @Override
     public boolean isConnection() {
-        return isConnect;
+        return client.isConnected();
     }
 
     @Override
@@ -80,8 +74,24 @@ public class Client implements ConnectionClient{
     }
 
     @Override
-    public void setHandler(ClientHandler handler) {
-        mHandler = handler;
+    public void start() {
+        client.start();
     }
+
+    @Override
+    public com.jme3.network.Client getConnectionClient() {
+        return client;
+    }
+
+    @Override
+    public void addStateListener(ClientStateListener listener) {
+        client.addClientStateListener(listener);
+    }
+
+    @Override
+    public void addMessageListener(MessageListener<com.jme3.network.Client> listener) {
+        client.addMessageListener(listener);
+    }
+
 
 }

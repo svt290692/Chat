@@ -21,12 +21,13 @@ public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow
 
     MainWindowListener mListener;
 
+    JFrame MainFrame;
+
     public MainWindow() {
-        JFrame frame = new JFrame();
-        frame.setContentPane(MainPanel);
-        frame.setVisible(true);
-        frame.pack();
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        MainFrame = new JFrame();
+        MainFrame.setContentPane(MainPanel);
+        MainFrame.pack();
+        MainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         usersModel = new DefaultListModel();
         LIST_users.setModel(usersModel);
@@ -91,5 +92,15 @@ public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow
     @Override
     public void setListener(MainWindowListener listener) {
         mListener = listener;
+    }
+
+    @Override
+    public JFrame getFrame() {
+        return MainFrame;
+    }
+
+    @Override
+    public void show() {
+        MainFrame.setVisible(true);
     }
 }

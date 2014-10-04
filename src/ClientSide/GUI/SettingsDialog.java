@@ -1,5 +1,6 @@
 package ClientSide.GUI;
 
+import ClientSide.Interfaces.Gui.Listeners.OkClickedListener;
 import ClientSide.Interfaces.Gui.Windows.SettingsWindow;
 
 import javax.swing.*;
@@ -18,7 +19,7 @@ public class SettingsDialog extends JDialog implements SettingsWindow{
     private JLabel LBL_IP;
     private JLabel LBL_port;
 
-    ActionListener mListener;
+    OkClickedListener mListener;
 
     public SettingsDialog() {
         setContentPane(contentPane);
@@ -27,7 +28,7 @@ public class SettingsDialog extends JDialog implements SettingsWindow{
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                mListener.actionPerformed(e);
+                mListener.onOK();
                 onOK();
             }
         });
@@ -73,20 +74,22 @@ public class SettingsDialog extends JDialog implements SettingsWindow{
 
     @Override
     public String getIP() {
-        return null;
+        return TF_IP.getText();
     }
 
     @Override
-    public String getPort() {
-        return null;
+    public int getPort() {
+        if(TF_port.getText() == "") return 0;
+
+        return Integer.parseInt(TF_port.getText());
     }
 
     @Override
     public void setTopLabel(String text) {
-
+        LBL_settings.setText(text);
     }
     @Override
-    public void setListener(ActionListener OkListener) {
+    public void setListener(OkClickedListener OkListener) {
         mListener = OkListener;
     }
 }

@@ -1,6 +1,7 @@
 package ClientSide.Interfaces.Gui.Windows;
 
 import ClientSide.Interfaces.Gui.Listeners.StartDialogListener;
+import ClientSide.Interfaces.Gui.Showable;
 
 import java.awt.event.ActionListener;
 
@@ -23,6 +24,4 @@ public interface StartWindow {
      * @param text
      */
     public void setLabel(String text);
-
-
 }

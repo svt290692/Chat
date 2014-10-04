@@ -1,5 +1,8 @@
 package ClientSide.Interfaces.Gui.Windows;
 
+import ClientSide.Interfaces.Gui.Listeners.OkClickedListener;
+import ClientSide.Interfaces.Gui.Showable;
+
 import java.awt.event.ActionListener;
 
 /**
@@ -7,8 +10,8 @@ import java.awt.event.ActionListener;
  */
 public interface SettingsWindow {
     String getIP();
-    String getPort();
+    int getPort();
     void setTopLabel(String text);
 
-    void setListener(ActionListener OkListener);
+    void setListener(OkClickedListener OkListener);
 }
