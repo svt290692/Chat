@@ -1,8 +1,11 @@
 package Net;
 
+import com.jme3.network.serializing.Serializable;
+
 /**
  * Created by svt on 02.10.2014.
  */
+@Serializable
 public class LogPass {
     private String login = null;
     private String password = null;

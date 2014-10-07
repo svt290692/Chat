@@ -111,6 +111,11 @@ public class StartDialog extends JDialog implements StartWindow {
         return TF_password.getText();
     }
 
+    @Override
+    public JDialog getDialog() {
+        return this;
+    }
+
     /**
      * set text to label output
      *

@@ -1,25 +1,42 @@
 package Net.Messages;
 
-import java.lang.reflect.Type;
+import com.jme3.network.AbstractMessage;
+import com.jme3.network.serializing.Serializable;
 
 /**
  * Created by svt on 02.10.2014.
  */
-public class ServerMessage {
+@Serializable
+public class ServerMessage extends AbstractMessage{
     private String message;
     private TypeMessage type;
 
-    public enum TypeMessage{
-        ALLOW_REGISTRATION,
-        DENIED_REGISTRATION;
+    private Object DataObject;
+    public ServerMessage() {
     }
 
-    public ServerMessage() {
+    public ServerMessage(String message, TypeMessage type) {
+        this.message = message;
+        this.type = type;
+    }
+
+    public ServerMessage(String message, TypeMessage type, Object dataObject) {
+        this.message = message;
+        this.type = type;
+        DataObject = dataObject;
     }
 
     public ServerMessage(String message) {
 
         this.message = message;
+    }
+
+    public Object getDataObject() {
+        return DataObject;
+    }
+
+    public void setDataObject(Object dataObject) {
+        DataObject = dataObject;
     }
 
     public TypeMessage getType() {
@@ -43,6 +60,8 @@ public class ServerMessage {
     public String toString() {
         return "ServerMessage{" +
                 "message='" + message + '\'' +
+                ", type=" + type +
+                ", DataObject=" + DataObject +
                 '}';
     }
 

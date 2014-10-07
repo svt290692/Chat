@@ -36,7 +36,7 @@ public class Client implements ConnectionClient{
     public boolean tryConnection() {
 
         try{
-            client = Network.connectToServer(curIP,curPort);
+            client = Network.connectToServer(curIP,curPort,-1);
         }catch (Exception e){
             lastConnectError = e.getMessage();
             return false;

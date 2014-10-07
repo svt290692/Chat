@@ -3,6 +3,7 @@ package ClientSide.Interfaces.Gui.Windows;
 import ClientSide.Interfaces.Gui.Listeners.StartDialogListener;
 import ClientSide.Interfaces.Gui.Showable;
 
+import javax.swing.*;
 import java.awt.event.ActionListener;
 
 /**
@@ -18,7 +19,7 @@ public interface StartWindow {
     public String getLoginField();
     public String getPasswordField();
 
-
+    public JDialog getDialog();
     /**
      * set text to label output
      * @param text

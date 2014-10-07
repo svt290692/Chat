@@ -3,8 +3,10 @@ package ClientSide.GUI;
 import ClientSide.Interfaces.Gui.Listeners.MainWindowListener;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.event.*;
+import java.util.List;
 
 /**
  * Created by svt on 02.10.2014.
@@ -35,19 +37,27 @@ public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow
         B_Exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                mListener.onMainWindowExit();
             }
         });
         B_logOut.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                mListener.onLogOut();
             }
         });
         B_sendLS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                mListener.requestPrivateChat(usersModel.get(LIST_users.getLeadSelectionIndex()).toString());
+            }
+        });
+        LIST_users.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if(e.getClickCount() == 2){
+                    mListener.requestPrivateChat(usersModel.get(LIST_users.getLeadSelectionIndex()).toString());
+                }
             }
         });
     }
@@ -87,6 +97,23 @@ public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow
     @Override
     public boolean removeUser(int index) {
         return usersModel.removeElement(index);
+    }
+
+
+    @Override
+    public void setUsersList(List<? extends Object> users) {
+        usersModel.clear();
+
+        for(Object o : users){
+            addUser(o.toString());
+        }
+        addUser("asdas");
+        addUser("asd124124as");
+        addUser("asdasdasdas");
+        addUser("asdacxzvbnmns");
+        addUser("asda    s");
+        addUser("asd235464768as");
+
     }
 
     @Override

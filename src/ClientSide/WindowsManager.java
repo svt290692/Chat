@@ -3,23 +3,29 @@ package ClientSide;
 import ClientSide.GUI.MainWindow;
 import ClientSide.GUI.StartDialog;
 import ClientSide.Interfaces.Gui.Windows.PrivateWindow;
-import ClientSide.Interfaces.PrivateMessagesReceiver;
 import ClientSide.Interfaces.WindowsHandler;
 import Net.Messages.PrivateMessage;
+import Net.Messages.ServerMessage;
+import com.jme3.network.ClientStateListener;
+import com.jme3.network.Message;
+import com.jme3.network.MessageListener;
+import org.lwjgl.Sys;
 
 import javax.swing.*;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 /**
  * Created by svt on 03.10.2014.
  */
-public class WindowsManager implements WindowsHandler,PrivateMessagesReceiver{
+public class WindowsManager implements WindowsHandler,MessageListener<com.jme3.network.Client>,ClientStateListener {
 
     private ClientSide.Interfaces.Gui.Windows.MainWindow mainWindow = null;
     private Map<String,PrivateWindow> mPrivateWindows = null;
 
     Client mClient;
+
 
     public WindowsManager(Client client) {
         mPrivateWindows = new TreeMap<String, PrivateWindow>();
@@ -30,10 +36,12 @@ public class WindowsManager implements WindowsHandler,PrivateMessagesReceiver{
     public void showMaiWindow() {
         if(mainWindow == null) {
             mainWindow = new MainWindow();
+            mainWindow.setListener(this);
         }
-        mainWindow.show();
-    }
 
+        mainWindow.show();
+
+    }
 
     @Override
     public void onMainWindowExit() {
@@ -65,14 +73,35 @@ public class WindowsManager implements WindowsHandler,PrivateMessagesReceiver{
     }
 
 
-    @Override
-    public void receiveMessage(String message, String who) {
-        requestPrivateChat(who);
-        mPrivateWindows.get(who).addNewMessage(message,false,true,true);
-    }
 
     @Override
     public void MessageWasInput(String message, String when) {
         mClient.getConnectionClient().send(new PrivateMessage(message,when));
+    }
+
+    @Override
+    public void messageReceived(com.jme3.network.Client source, Message m) {
+        System.out.println("message from server resive =" + m);
+        if(m instanceof ServerMessage){
+            ServerMessage servMsg = (ServerMessage)m;
+
+            switch(servMsg.getType()){
+                case CLIENTS_INFORMATION:
+                    List<String> names = (List<String>)servMsg.getDataObject();
+//                    names.remove(StartDialogHandler.getPassLogin());
+                    mainWindow.setUsersList(names);
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void clientConnected(com.jme3.network.Client c) {
+
+    }
+
+    @Override
+    public void clientDisconnected(com.jme3.network.Client c, DisconnectInfo info) {
+
     }
 }

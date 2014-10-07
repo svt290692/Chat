@@ -1,6 +1,8 @@
 package ServerSide;
 
 
+import Net.LogPass;
+import Net.Messages.*;
 import com.jme3.network.Network;
 import com.jme3.network.Server;
 import com.jme3.network.serializing.Serializer;
@@ -11,9 +13,11 @@ import java.io.IOException;
  * Created by svt on 29.09.2014.
  */
 public class ChatServer {
-        static{
-
-        }
+    static{
+        Serializer.registerClasses(RegistrationMessage.class, PrivateMessage.class, InitializationMessage.class,
+                GlobalMessage.class, ConferenceMessage.class,ServerMessage.class, LogPass.class,
+                RequestMessage.class);
+    }
     Server server;
 
     public ChatServer() {
@@ -22,7 +26,7 @@ public class ChatServer {
         int port = 5511;
 
         try {
-            server = Network.createServer(5511,5512);
+            server = Network.createServer(5511,-1);
         } catch (IOException ex) {
             System.err.println("error");
             return;

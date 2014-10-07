@@ -1,13 +1,9 @@
 <component name="libraryTable">
-  <library name="jME3-networking">
+  <library name="jdom-2.0.5-contrib">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/other files/jME3-networking.jar!/" />
-      <root url="jar://$PROJECT_DIR$/other files/JDom2/jdom-2.0.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/other files/JDom2/jdom-2.0.5-contrib.jar!/" />
       <root url="jar://$PROJECT_DIR$/other files/JDom2/jdom-2.0.5-junit.jar!/" />
-      <root url="jar://$PROJECT_DIR$/other files/JDom2/lib/jaxen-1.1.6.jar!/" />
-      <root url="jar://$PROJECT_DIR$/other files/JDom2/lib/xercesImpl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/other files/JDom2/lib/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/other files/JDom2/jdom-2.0.5.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/other files/JDom2/jdom-2.0.5-javadoc.jar!/" />

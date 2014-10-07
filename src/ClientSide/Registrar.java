@@ -2,9 +2,10 @@ package ClientSide;
 
 import ClientSide.Interfaces.RegistrarClients;
 import Net.LogPass;
+import Net.Messages.RegistrationMessage;
 import Net.Messages.ServerMessage;
+import Net.Messages.TypeMessage;
 import com.jme3.network.Client;
-import com.jme3.network.ClientStateListener;
 import com.jme3.network.Message;
 import com.jme3.network.Network;
 
@@ -26,6 +27,8 @@ public class Registrar implements RegistrarClients{
     boolean isConnect = false;
     boolean interrupt = false;
     String informationForClient;
+
+    Message messageToSendWhenConnect = null;
 
     public static Registrar getInstance()
     {
@@ -51,13 +54,16 @@ public class Registrar implements RegistrarClients{
             informationForClient = "";
             String ip = GlobalConfig.getInstance().getIP();
             int port = GlobalConfig.getInstance().getPort();
+            messageToSendWhenConnect = new RegistrationMessage(logPass);
+
 
             curClient = Network.connectToServer(ip,port,-1);
-
-            curClient.addMessageListener(this);
             curClient.addClientStateListener(this);
+            curClient.addMessageListener(this);
 
             curClient.start();
+
+
             try {
             while(true) {
                 if(isAnswer == true && isConnect == true){
@@ -87,6 +93,8 @@ public class Registrar implements RegistrarClients{
     @Override
     public void clientConnected(Client c) {
         isConnect = true;
+        curClient.send(messageToSendWhenConnect);
+        messageToSendWhenConnect = null;
     }
 
     /**
@@ -109,10 +117,10 @@ public class Registrar implements RegistrarClients{
         if(m instanceof ServerMessage){
             ServerMessage msg = (ServerMessage)m;
 
-            if(msg.getType().equals(ServerMessage.TypeMessage.ALLOW_REGISTRATION)){
+            if(msg.getType().equals(TypeMessage.ALLOW_REGISTRATION)){
                 informationForClient = "Registration succeeded, you may enter to you account now";
             }
-            else if(msg.getType().equals(ServerMessage.TypeMessage.DENIED_REGISTRATION)){
+            else if(msg.getType().equals(TypeMessage.DENIED_REGISTRATION)){
                 informationForClient = "registration denied because:" + msg.getMessage();
             }
             else{
