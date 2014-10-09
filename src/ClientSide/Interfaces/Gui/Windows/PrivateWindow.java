@@ -12,7 +12,7 @@ public interface PrivateWindow extends Showable {
     String getUserName();
     void setUserName(String name);
 
-    void addNewMessage(String message, boolean insertDate, boolean insertTime, boolean insertName);
+    void addNewMessage(String message, boolean insertDate, boolean insertTime, String insertName);
 
     void clearChatArea();
 

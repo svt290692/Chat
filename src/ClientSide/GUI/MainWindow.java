@@ -1,11 +1,11 @@
 package ClientSide.GUI;
 
 import ClientSide.Interfaces.Gui.Listeners.MainWindowListener;
+import Net.NetworkClient;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.event.*;
+import java.io.File;
 import java.util.List;
 
 /**
@@ -49,28 +49,24 @@ public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow
         B_sendLS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mListener.requestPrivateChat(usersModel.get(LIST_users.getLeadSelectionIndex()).toString());
+                mListener.requestPrivateChat(usersModel.get(LIST_users.getLeadSelectionIndex()).toString().split(" ")[0]);
+                System.out.println("DEBUG MESSAGE: request private chat with"
+                        + usersModel.get(LIST_users.getLeadSelectionIndex()).toString().split(" ")[0]);
             }
         });
         LIST_users.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(e.getClickCount() == 2){
-                    mListener.requestPrivateChat(usersModel.get(LIST_users.getLeadSelectionIndex()).toString());
+                    mListener.requestPrivateChat(usersModel.get(LIST_users.getLeadSelectionIndex()).toString().split(" ")[0]);
+                    System.out.println("DEBUG MESSAGE: request private chat with"
+                            + usersModel.get(LIST_users.getLeadSelectionIndex()).toString().split(" ")[0]);
                 }
             }
         });
     }
     public static void main(String args[]){
-        MainWindow w = new MainWindow();
-//        Pattern p = Pattern.compile("<([\\w]+)>");
-//        Matcher m = p.matcher("<rm><xxx><yyy>");
-//
-//        while (m.find()) {
-//            System.out.print("Start index: " + m.start());
-//            System.out.print(" End index: " + m.end() + " ");
-//            System.out.println(m.group());
-//        }
+        new File("dir").mkdir();
     }
 
     @Override
@@ -101,19 +97,12 @@ public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow
 
 
     @Override
-    public void setUsersList(List<? extends Object> users) {
+    public void setUsersAndStatusesList(List<NetworkClient> users) {
         usersModel.clear();
 
-        for(Object o : users){
-            addUser(o.toString());
+        for(NetworkClient client : users){
+            addUser(client.getName() + " " +(client.isOnline() ? "(online)" : "(offline)"));
         }
-        addUser("asdas");
-        addUser("asd124124as");
-        addUser("asdasdasdas");
-        addUser("asdacxzvbnmns");
-        addUser("asda    s");
-        addUser("asd235464768as");
-
     }
 
     @Override

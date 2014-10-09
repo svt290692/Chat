@@ -7,59 +7,65 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="a5e9a" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="3afa8" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <scrollpane id="88fdd">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="d72ef" class="javax.swing.JTextPane" binding="TP_chat">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </grid>
+      <grid id="e638e" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints border-constraint="North"/>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="dc08d" class="javax.swing.JLabel" binding="LBL_nameUser">
+          <component id="31fbd" class="javax.swing.JLabel" binding="LBL_name">
             <constraints/>
             <properties>
-              <text value="name:"/>
+              <text value="Label"/>
             </properties>
           </component>
         </children>
       </grid>
-      <grid id="98220" layout-manager="BorderLayout" hgap="0" vgap="0">
+      <grid id="2f993" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="South"/>
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="828ce" layout-manager="BorderLayout" hgap="0" vgap="0">
+          <grid id="1d557" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="2">
             <constraints border-constraint="South"/>
             <properties/>
             <border type="none"/>
             <children>
-              <component id="c4e93" class="javax.swing.JTextField" binding="TF_message">
-                <constraints border-constraint="Center"/>
-                <properties/>
+              <component id="a13c4" class="javax.swing.JButton" binding="B_history">
+                <constraints/>
+                <properties>
+                  <text value="History"/>
+                </properties>
               </component>
-              <component id="62fab" class="javax.swing.JButton" binding="B_send">
-                <constraints border-constraint="East"/>
+              <component id="44176" class="javax.swing.JButton" binding="B_send">
+                <constraints/>
                 <properties>
                   <text value="Send"/>
                 </properties>
               </component>
             </children>
           </grid>
-        </children>
-      </grid>
-      <grid id="ebb3d" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints border-constraint="Center"/>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <scrollpane id="3fb44">
-            <constraints border-constraint="Center"/>
+          <component id="735de" class="javax.swing.JTextField" binding="TF_message">
+            <constraints border-constraint="North"/>
             <properties/>
-            <border type="none"/>
-            <children>
-              <component id="66639" class="javax.swing.JTextArea" binding="TA_chat">
-                <constraints/>
-                <properties/>
-              </component>
-            </children>
-          </scrollpane>
+          </component>
         </children>
       </grid>
     </children>

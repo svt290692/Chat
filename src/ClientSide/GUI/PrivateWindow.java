@@ -1,83 +1,103 @@
 package ClientSide.GUI;
 
 import ClientSide.Interfaces.Gui.Listeners.PrivateWindowListener;
+import ClientSide.StartDialogHandler;
 
 import javax.swing.*;
+import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
 /**
- * Created by svt on 02.10.2014.
+ * Created by svt on 09.10.2014.
  */
-public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateWindow {
+public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateWindow{
     private JPanel mainPanel;
-    private JLabel LBL_nameUser;
-    private JTextArea TA_chat;
     private JTextField TF_message;
+    private JButton B_history;
     private JButton B_send;
+    private JLabel LBL_name;
+    private JTextPane TP_chat;
 
-    PrivateWindowListener mListener;
-
-    JFrame MainFrame;
+    private static AttributeSet outSet;
+    private static AttributeSet inSet;
+    private PrivateWindowListener mListener;
+    JFrame mainFrame;
 
     public PrivateWindow() {
-        MainFrame = new JFrame();
-        MainFrame.setContentPane(mainPanel);
-        MainFrame.setModalExclusionType(Dialog.ModalExclusionType.NO_EXCLUDE);
-        MainFrame.pack();
+        mainFrame = new JFrame();
+        mainFrame.setContentPane(mainPanel);
+        mainFrame.pack();
+        mainFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        TF_message.getRootPane().setDefaultButton(B_send);
 
+        TP_chat.setEditable(false);
+
+        outSet = StyleContext.getDefaultStyleContext().addAttribute(SimpleAttributeSet.EMPTY,
+                StyleConstants.Foreground, Color.BLUE);
+
+        inSet = StyleContext.getDefaultStyleContext().addAttribute(SimpleAttributeSet.EMPTY,
+                StyleConstants.Foreground, Color.BLUE);
         B_send.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e
-             */
             @Override
             public void actionPerformed(ActionEvent e) {
-                mListener.MessageWasInput(TF_message.getText(), LBL_nameUser.getText());
+                if(TF_message.getText().isEmpty() == false){
+                    mListener.MessageWasInput(TF_message.getText(),LBL_name.getText().split(" ")[0]);
+
+                    addNewMessage(TF_message.getText(),false,true, StartDialogHandler.getPassLogin());
+                }
+            }
+        });
+        B_history.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mListener.historyRequest(LBL_name.getText().split(" ")[0],StartDialogHandler.getPassLogin());
             }
         });
     }
 
     @Override
     public String getUserName() {
-        return LBL_nameUser.getText();
+        return LBL_name.getText();
     }
 
     @Override
     public void setUserName(String name) {
-        LBL_nameUser.setText(name);
+        LBL_name.setText(name);
     }
 
     @Override
-    public void addNewMessage(String message, boolean insertDate, boolean insertTime, boolean insertName) {
-        StringBuilder msg = new StringBuilder("");
+    public void addNewMessage(String message, boolean insertDate, boolean insertTime, String insertName) {
+        try {
+            addLine((insertDate ? makeDate() + " _ " : "")
+                    + (insertTime ? makeTime() + " _ " : "")
+                    + insertName + " : "
+                    + message);
+        } catch (BadLocationException ignore){}
+    }
 
-        long curTime = System.currentTimeMillis();
-        Date curDate = new Date(curTime);
+    public static String makeTime() {
+        return
+                new SimpleDateFormat("HH:mm:ss").
+                        format(new Date(System.currentTimeMillis()));
+    }
 
-        if(insertDate){
-            String date = new SimpleDateFormat("dd.MM.yyyy ").format(curTime);
-            msg.append(date);
-        }
-        if(insertTime){
-            String time = new SimpleDateFormat("ss:mm:hh").format(curTime);
-            msg.append(time);
-        }
-        if(insertName){
-            msg.append(getUserName() + ": ");
-        }
-        msg.append(message);
-        TA_chat.append(msg.toString());
+    public static String makeDate() {
+        return
+                new SimpleDateFormat("yyyy.MM.dd").
+                        format(new Date(System.currentTimeMillis()));
     }
 
     @Override
     public void clearChatArea() {
-        TA_chat.setText("");
+        TP_chat.setText("");
+    }
+
+    private void addLine(String text) throws BadLocationException {
+        TP_chat.getStyledDocument().insertString(TP_chat.getStyledDocument().getLength(), text + "\n", outSet);
     }
 
     @Override
@@ -87,11 +107,11 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
 
     @Override
     public JFrame getFrame() {
-        return MainFrame;
+        return mainFrame;
     }
 
     @Override
     public void show() {
-        MainFrame.setVisible(true);
+        mainFrame.setVisible(true);
     }
 }

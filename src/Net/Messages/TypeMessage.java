@@ -11,7 +11,8 @@ public enum TypeMessage implements Serializable{
     DENIED_REGISTRATION,
     ALLOW_LOGIN,
     DENIED_LOGIN,
-    CLIENTS_INFORMATION;
+    CLIENTS_INFORMATION,
+    HISTORY_LOG;
 
     TypeMessage() {
     }

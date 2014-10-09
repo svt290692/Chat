@@ -5,4 +5,10 @@ package ClientSide.Interfaces.Gui.Listeners;
  */
 public interface PrivateWindowListener {
     void MessageWasInput(String message, String when);
+
+    /**
+     *
+     * @param names names with history request all except user name
+     */
+    void historyRequest(String ... names);
 }

@@ -4,6 +4,8 @@ import ClientSide.Interfaces.Gui.Listeners.StartDialogListener;
 import ClientSide.Interfaces.Gui.Windows.StartWindow;
 
 import javax.swing.*;
+import javax.swing.plaf.DimensionUIResource;
+import java.awt.*;
 import java.awt.event.*;
 
 public class StartDialog extends JDialog implements StartWindow {
@@ -11,12 +13,12 @@ public class StartDialog extends JDialog implements StartWindow {
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField TF_login;
-    private JTextField TF_password;
     private JButton B_registration;
     private JButton B_settings;
     private JLabel LBL_welcome;
     private JLabel LBL_login;
     private JLabel LBL_password;
+    private JPasswordField PF_password;
 
     StartDialogListener mListener;
 
@@ -108,7 +110,7 @@ public class StartDialog extends JDialog implements StartWindow {
 
     @Override
     public String getPasswordField() {
-        return TF_password.getText();
+        return new String(PF_password.getPassword());
     }
 
     @Override

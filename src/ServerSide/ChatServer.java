@@ -3,6 +3,7 @@ package ServerSide;
 
 import Net.LogPass;
 import Net.Messages.*;
+import Net.NetworkClient;
 import com.jme3.network.Network;
 import com.jme3.network.Server;
 import com.jme3.network.serializing.Serializer;
@@ -16,7 +17,7 @@ public class ChatServer {
     static{
         Serializer.registerClasses(RegistrationMessage.class, PrivateMessage.class, InitializationMessage.class,
                 GlobalMessage.class, ConferenceMessage.class,ServerMessage.class, LogPass.class,
-                RequestMessage.class);
+                RequestMessage.class, NetworkClient.class);
     }
     Server server;
 

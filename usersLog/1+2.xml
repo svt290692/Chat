@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <msg date="2014.10.09 н.э. at 20:04:45 MSK" from="1" text="ПРивет двоечка" to="2" />
+  <msg date="2014.10.09 н.э. at 20:04:55 MSK" from="1" text="ПРивет двоечка" to="2" />
+  <msg date="2014.10.09 н.э. at 20:04:55 MSK" from="1" text="ПРивет двоечка" to="2" />
+  <msg date="2014.10.09 н.э. at 20:04:55 MSK" from="1" text="ПРивет двоечка" to="2" />
+  <msg date="2014.10.09 н.э. at 20:12:23 MSK" from="2" text="ы" to="1" />
+  <msg date="2014.10.09 н.э. at 20:12:26 MSK" from="2" text="ы22" to="1" />
+</root>

@@ -21,6 +21,12 @@ public class PrivateMessage extends AbstractMessage {
         this.message = message;
     }
 
+    public PrivateMessage(String message, String whoSend, String recipient) {
+        this.whoSend = whoSend;
+        this.message = message;
+        this.recipient = recipient;
+    }
+
     public PrivateMessage(String message, String recipient) {
         this.message = message;
         this.recipient = recipient;

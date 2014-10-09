@@ -67,8 +67,13 @@
               <component id="d7f04" class="javax.swing.JLabel" binding="LBL_login">
                 <constraints border-constraint="West"/>
                 <properties>
+                  <horizontalTextPosition value="0"/>
+                  <labelFor value="fabed"/>
                   <text value="Login:"/>
                 </properties>
+                <clientProperties>
+                  <html.disable class="java.lang.Boolean" value="false"/>
+                </clientProperties>
               </component>
               <component id="fabed" class="javax.swing.JTextField" binding="TF_login">
                 <constraints border-constraint="Center"/>
@@ -91,10 +96,11 @@
               <component id="541f3" class="javax.swing.JLabel" binding="LBL_password">
                 <constraints border-constraint="West"/>
                 <properties>
+                  <labelFor value="596f2"/>
                   <text value="Password"/>
                 </properties>
               </component>
-              <component id="162b9" class="javax.swing.JTextField" binding="TF_password">
+              <component id="596f2" class="javax.swing.JPasswordField" binding="PF_password">
                 <constraints border-constraint="Center"/>
                 <properties/>
               </component>

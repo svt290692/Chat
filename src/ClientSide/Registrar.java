@@ -114,6 +114,9 @@ public class Registrar implements RegistrarClients{
 
     @Override
     public void messageReceived(Client source, Message m) {
+
+        System.out.println("DEBUG MESSAGE : registrar resive  :" + m );
+
         if(m instanceof ServerMessage){
             ServerMessage msg = (ServerMessage)m;
 

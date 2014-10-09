@@ -2,6 +2,7 @@ package ClientSide.Interfaces.Gui.Windows;
 
 import ClientSide.Interfaces.Gui.Listeners.MainWindowListener;
 import ClientSide.Interfaces.Gui.Showable;
+import Net.NetworkClient;
 
 import javax.swing.*;
 import java.util.List;
@@ -16,7 +17,7 @@ public interface MainWindow extends Showable{
     boolean removeUser(Object user);
     boolean removeUser(int index);
 
-    void setUsersList(List<? extends Object> users);
+    void setUsersAndStatusesList(List<NetworkClient> users);
 
     void setListener(MainWindowListener listener);
 

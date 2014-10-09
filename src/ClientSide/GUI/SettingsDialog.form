@@ -72,7 +72,7 @@
               <component id="90d46" class="javax.swing.JLabel" binding="LBL_settings">
                 <constraints/>
                 <properties>
-                  <text value="Label"/>
+                  <text value="Settings"/>
                 </properties>
               </component>
             </children>
