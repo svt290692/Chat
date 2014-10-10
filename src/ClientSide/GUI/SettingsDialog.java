@@ -85,6 +85,16 @@ public class SettingsDialog extends JDialog implements SettingsWindow{
     }
 
     @Override
+    public void setIP(String ip) {
+        TF_IP.setText(ip);
+    }
+
+    @Override
+    public void setPort(String port) {
+        TF_port.setText(port);
+    }
+
+    @Override
     public void setTopLabel(String text) {
         LBL_settings.setText(text);
     }

@@ -11,7 +11,10 @@ import java.awt.event.ActionListener;
 public interface SettingsWindow {
     String getIP();
     int getPort();
-    void setTopLabel(String text);
 
+    void setIP(String ip);
+    void setPort(String port);
+
+    void setTopLabel(String text);
     void setListener(OkClickedListener OkListener);
 }

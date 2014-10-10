@@ -1,4 +1,4 @@
-package ServerSide;
+package Net.Logging;
 
 import java.io.IOException;
 import java.util.*;

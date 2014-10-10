@@ -1,5 +1,7 @@
 package ServerSide;
 
+import Net.Logging.XMLSingleBranchedLogger;
+import Net.Logging.XMLSingleBranchedRegistrar;
 import Net.Messages.*;
 import Net.NetworkClient;
 import com.jme3.network.HostedConnection;

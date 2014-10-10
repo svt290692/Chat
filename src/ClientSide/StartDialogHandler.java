@@ -122,6 +122,8 @@ public class StartDialogHandler implements StartDialogListener {
         final SettingsDialog settings = new SettingsDialog();
         settings.pack();
         settings.setLocation(100, 100);
+        settings.setIP(GlobalConfig.getInstance().getIP());
+        settings.setPort(Integer.toString(GlobalConfig.getInstance().getPort()));
         settings.setListener(new OkClickedListener() {
             @Override
             public void onOK() {

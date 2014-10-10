@@ -102,7 +102,7 @@ public class WindowsManager implements WindowsHandler,MessageListener<com.jme3.n
             switch(servMsg.getType()){
                 case CLIENTS_INFORMATION:
                     List<Net.NetworkClient> names = (List<Net.NetworkClient>)servMsg.getDataObject();
-//                    names.remove(StartDialogHandler.getPassLogin());
+                    delMyLoginFrom(names);
                     mainWindow.setUsersAndStatusesList(names);
                     break;
                 case HISTORY_LOG:
@@ -115,6 +115,15 @@ public class WindowsManager implements WindowsHandler,MessageListener<com.jme3.n
         }
         else if( m instanceof PrivateMessage){
             privateMessageReceived((PrivateMessage)m);
+        }
+    }
+
+    private void delMyLoginFrom(List<Net.NetworkClient> list){
+        for(NetworkClient c : list){
+            if(c.getName().equals(StartDialogHandler.getPassLogin())){
+                list.remove(c);
+                break;
+            }
         }
     }
 

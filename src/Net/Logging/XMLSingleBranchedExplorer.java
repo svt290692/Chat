@@ -1,4 +1,4 @@
-package ServerSide;
+package Net.Logging;
 
 import org.jdom2.Attribute;
 import org.jdom2.Document;
