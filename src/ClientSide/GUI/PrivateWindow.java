@@ -22,8 +22,6 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
     private JLabel LBL_name;
     private JTextPane TP_chat;
 
-    private static AttributeSet outSet;
-    private static AttributeSet inSet;
     private PrivateWindowListener mListener;
     JFrame mainFrame;
 
@@ -36,18 +34,14 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
 
         TP_chat.setEditable(false);
 
-        outSet = StyleContext.getDefaultStyleContext().addAttribute(SimpleAttributeSet.EMPTY,
-                StyleConstants.Foreground, Color.BLUE);
-
-        inSet = StyleContext.getDefaultStyleContext().addAttribute(SimpleAttributeSet.EMPTY,
-                StyleConstants.Foreground, Color.BLUE);
         B_send.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(TF_message.getText().isEmpty() == false){
                     mListener.MessageWasInput(TF_message.getText(),LBL_name.getText().split(" ")[0]);
 
-                    addNewMessage(TF_message.getText(),false,true, StartDialogHandler.getPassLogin());
+                    addNewMessage(TF_message.getText(),false,true, StartDialogHandler.getPassLogin(), new Color(127,255,212));
+                    TF_message.setText("");
                 }
             }
         });
@@ -70,12 +64,12 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
     }
 
     @Override
-    public void addNewMessage(String message, boolean insertDate, boolean insertTime, String insertName) {
+    public void addNewMessage(String message, boolean insertDate, boolean insertTime, String insertName, Color color) {
         try {
-            addLine((insertDate ? makeDate() + " _ " : "")
+            addLine("[" + (insertDate ? makeDate() + " _ " : "")
                     + (insertTime ? makeTime() + " _ " : "")
-                    + insertName + " : "
-                    + message);
+                    + "] "+insertName + " : "
+                    + message, color);
         } catch (BadLocationException ignore){}
     }
 
@@ -96,8 +90,10 @@ public class PrivateWindow implements ClientSide.Interfaces.Gui.Windows.PrivateW
         TP_chat.setText("");
     }
 
-    private void addLine(String text) throws BadLocationException {
-        TP_chat.getStyledDocument().insertString(TP_chat.getStyledDocument().getLength(), text + "\n", outSet);
+    private void addLine(String text,Color color) throws BadLocationException {
+        TP_chat.getStyledDocument().insertString(TP_chat.getStyledDocument().getLength(), text + "\n",
+                StyleContext.getDefaultStyleContext().addAttribute(SimpleAttributeSet.EMPTY,
+                        StyleConstants.Background, color));
     }
 
     @Override

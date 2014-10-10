@@ -1,7 +1,6 @@
 package ClientSide;
 
 import ClientSide.GUI.MainWindow;
-import ClientSide.GUI.StartDialog;
 import ClientSide.Interfaces.Gui.Windows.PrivateWindow;
 import ClientSide.Interfaces.WindowsHandler;
 import Net.Messages.PrivateMessage;
@@ -12,6 +11,7 @@ import com.jme3.network.ClientStateListener;
 import com.jme3.network.Message;
 import com.jme3.network.MessageListener;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -134,7 +134,7 @@ public class WindowsManager implements WindowsHandler,MessageListener<com.jme3.n
             if(!user.equals(StartDialogHandler.getPassLogin())){
                 requestPrivateChat(user);
                 for(String msg : history)
-                mPrivateWindows.get(user).addNewMessage(msg,false,false,"");
+                mPrivateWindows.get(user).addNewMessage(msg,false,false,"", Color.LIGHT_GRAY);
             }
         }
     }
@@ -144,7 +144,7 @@ public class WindowsManager implements WindowsHandler,MessageListener<com.jme3.n
         PrivateWindow win = mPrivateWindows.get(message.getWhoSend());
         if(null == win)
             throw new IllegalStateException("Window requested is null");
-        win.addNewMessage(message.getMessage(),false,true,message.getWhoSend());
+        win.addNewMessage(message.getMessage(),false,true,message.getWhoSend(), new Color(151,255,255));
     }
 
     @Override

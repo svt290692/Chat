@@ -44,4 +44,6 @@
   <set port="5511" />
   <set ip="127.0.0.1" />
   <set port="5511" />
+  <set ip="127.0.0.1" />
+  <set port="5511" />
 </root>
