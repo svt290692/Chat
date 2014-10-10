@@ -30,7 +30,7 @@ public class StartDialogHandler implements StartDialogListener {
 
     public StartDialogHandler(StartWindow mDialog) {
         this.mDialog = mDialog;
-        client = new Client(GlobalConfig.getInstance().getIP(), GlobalConfig.getInstance().getPort());
+        client = new Client();
     }
 
     public static String getPassLogin() {
@@ -42,9 +42,14 @@ public class StartDialogHandler implements StartDialogListener {
      */
     @Override
     public void onOK() {
+
+        if(mDialog.getLoginField() == "" || mDialog.getPasswordField() == ""){
+            JOptionPane.showMessageDialog(mDialog.getDialog(),"Fields can not be empty","Fields is empty",JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         if (tryConnection() == false) {
             JOptionPane.showMessageDialog(null, "error connection to server info : " + client.getLastConnectError());
-
         }
 
 
@@ -106,7 +111,7 @@ public class StartDialogHandler implements StartDialogListener {
         WindowsManager winMan = new WindowsManager(client);
         winMan.showMaiWindow();
         client.addMessageListener(winMan);
-        RequestMessage request = new RequestMessage("get me list of you clients please",
+        RequestMessage request = new RequestMessage("get me list of your clients please",
                 RequestMessage.RequestType.CLIENT_LIST);
         client.getConnectionClient().send(request);
         mDialog.getDialog().dispose();
@@ -120,9 +125,20 @@ public class StartDialogHandler implements StartDialogListener {
         settings.setListener(new OkClickedListener() {
             @Override
             public void onOK() {
+
+                if(settings.getIP() == "" || settings.getPort() == -1){
+                    JOptionPane.showMessageDialog(mDialog.getDialog(),"Fields can not be empty","Fields is empty",JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+                else if(settings.getPort() < 1024 || settings.getPort() > 65536){
+                    JOptionPane.showMessageDialog(mDialog.getDialog(),"Port incorrect please enter correct port","Port incorrect",JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
                 String ip = settings.getIP();
                 int port = settings.getPort();
-
+                //TODO bug
                 if(ip == "" || port == 0)
                     JOptionPane.showMessageDialog(settings,"Please enter IP an port ");
                 else {
@@ -143,6 +159,20 @@ public class StartDialogHandler implements StartDialogListener {
         reg.setListener(new OkClickedListener() {
             @Override
             public void onOK() {
+
+                if(reg.getLogin().isEmpty()){
+                    JOptionPane.showMessageDialog(mDialog.getDialog(),"Fields can not be empty","Error empty field",JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                else if(reg.getPassword().isEmpty() || reg.getConfirmPassword().isEmpty()){
+                    JOptionPane.showMessageDialog(mDialog.getDialog(),"Password can not be empty","Error empty field",JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                else if(!reg.isPasswordsEquals()){
+                    JOptionPane.showMessageDialog(mDialog.getDialog(),"Password can not be not equals","Passwords not equals",JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
                 String endMessage;
                 try {
                     endMessage = Registrar.getInstance().registerClient(new LogPass(reg.getLogin(), reg.getPassword()));

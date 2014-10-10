@@ -79,8 +79,8 @@ public class SettingsDialog extends JDialog implements SettingsWindow{
 
     @Override
     public int getPort() {
-        if(TF_port.getText() == "") return 0;
-
+        if(TF_port.getText().isEmpty()) return -1;
+//TODO
         return Integer.parseInt(TF_port.getText());
     }
 

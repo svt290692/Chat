@@ -21,12 +21,11 @@ public class Client implements ConnectionClient{
 
     private com.jme3.network.Client client;
 
-    public Client(String curIP, int curPort) {
-        this.curIP = curIP;
-        this.curPort = curPort;
+    public Client() {
+
     }
 
-    public Client(ClientStateListener mHandler, int curPort, String curIP) {
+    public Client(ClientStateListener mHandler) {
         this.mStateListener = mHandler;
         this.curPort = curPort;
         this.curIP = curIP;
@@ -36,7 +35,7 @@ public class Client implements ConnectionClient{
     public boolean tryConnection() {
 
         try{
-            client = Network.connectToServer(curIP,curPort,-1);
+            client = Network.connectToServer(GlobalConfig.getInstance().getIP(),GlobalConfig.getInstance().getPort(),-1);
         }catch (Exception e){
             lastConnectError = e.getMessage();
             return false;

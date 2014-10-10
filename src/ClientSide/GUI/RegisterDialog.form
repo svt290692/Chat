@@ -72,7 +72,7 @@
               <component id="d27b2" class="javax.swing.JLabel" binding="LBL_registration">
                 <constraints/>
                 <properties>
-                  <text value="Registration new client"/>
+                  <text value="Registration of new client"/>
                 </properties>
               </component>
             </children>
