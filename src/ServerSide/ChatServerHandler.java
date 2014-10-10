@@ -89,7 +89,7 @@ public class ChatServerHandler implements ServerHandler {
         } else{
             msg.setType(TypeMessage.DENIED_REGISTRATION);
             if(!isLogCorrect){
-                msg.setMessage("incorrect login or password");
+                msg.setMessage("You entered incorrect login or password. Try again.");
             }
             else{
                 msg.setMessage("this login already exists");
@@ -109,7 +109,7 @@ public class ChatServerHandler implements ServerHandler {
                 message.getLogPass().getPassword())) {
 
             servMsg.setType(TypeMessage.DENIED_LOGIN);
-            servMsg.setMessage("this account isNot exists please check login and password");
+            servMsg.setMessage("This user is not registered");
         } else {
             servMsg.setType(TypeMessage.ALLOW_LOGIN);
             addNewClient(message.getLogPass().getLogin(),connection);

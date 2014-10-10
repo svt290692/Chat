@@ -37,7 +37,7 @@ public class Client implements ConnectionClient{
         try{
             client = Network.connectToServer(GlobalConfig.getInstance().getIP(),GlobalConfig.getInstance().getPort(),-1);
         }catch (Exception e){
-            lastConnectError = e.getMessage();
+            lastConnectError = "Unable to connect to server. Check network connection status and settings";
             return false;
         }
         return true;

@@ -49,7 +49,7 @@ public class StartDialogHandler implements StartDialogListener {
         }
 
         if (tryConnection() == false) {
-            JOptionPane.showMessageDialog(null, "error connection to server info : " + client.getLastConnectError());
+            JOptionPane.showMessageDialog(null,client.getLastConnectError());
         }
 
 

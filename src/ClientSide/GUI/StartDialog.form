@@ -121,7 +121,7 @@
               <component id="d5409" class="javax.swing.JButton" binding="B_registration">
                 <constraints border-constraint="East"/>
                 <properties>
-                  <text value="Registration"/>
+                  <text value="Register"/>
                 </properties>
               </component>
               <component id="d2e86" class="javax.swing.JButton" binding="B_settings">

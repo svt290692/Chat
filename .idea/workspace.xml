@@ -31,7 +31,7 @@
       <file leaf-file-name="WindowsManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSide/WindowsManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1831" max-vertical-offset="2550">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2363" max-vertical-offset="2788">
               <caret line="139" column="5" selection-start-line="139" selection-start-column="5" selection-end-line="139" selection-end-column="5" />
               <folding />
             </state>
@@ -41,22 +41,45 @@
       <file leaf-file-name="RegisterDialog.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSide/GUI/RegisterDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1785">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrivateWindow.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PrivateWindow.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSide/GUI/PrivateWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7671233" vertical-offset="242" max-vertical-offset="1615">
-              <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="1615">
+              <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
               <folding>
-                <element signature="e#1050#1528#0" expanded="true" />
                 <element signature="e#1517#1518#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatServerHandler.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ServerSide/ChatServerHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4312321" vertical-offset="804" max-vertical-offset="2635">
+              <caret line="111" column="59" selection-start-line="111" selection-start-column="59" selection-end-line="111" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#messageReceived#0;class#ChatServerHandler#0" expanded="false" />
+                <element signature="method#receiveRegistrationMessage#0;class#ChatServerHandler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Registrar.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientSide/Registrar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="2261">
+              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,11 +87,9 @@
       <file leaf-file-name="GlobalConfig.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSide/GlobalConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="1088">
+            <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1190">
               <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,9 +97,29 @@
       <file leaf-file-name="Client.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSide/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1360">
-              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="1734">
+              <caret line="39" column="107" selection-start-line="39" selection-start-column="107" selection-end-line="39" selection-end-column="107" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1161#1162#0" expanded="true" />
+                <element signature="e#1200#1201#0" expanded="true" />
+                <element signature="e#1251#1252#0" expanded="true" />
+                <element signature="e#1294#1295#0" expanded="true" />
+                <element signature="e#1344#1345#0" expanded="true" />
+                <element signature="e#1370#1371#0" expanded="true" />
+                <element signature="e#1413#1414#0" expanded="true" />
+                <element signature="e#1441#1442#0" expanded="true" />
+                <element signature="e#1483#1484#0" expanded="true" />
+                <element signature="e#1513#1514#0" expanded="true" />
+                <element signature="e#1564#1565#0" expanded="true" />
+                <element signature="e#1594#1595#0" expanded="true" />
+                <element signature="e#1635#1636#0" expanded="true" />
+                <element signature="e#1665#1666#0" expanded="true" />
+                <element signature="e#1739#1740#0" expanded="true" />
+                <element signature="e#1768#1769#0" expanded="true" />
+                <element signature="e#1848#1849#0" expanded="true" />
+                <element signature="e#1903#1904#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,17 +127,11 @@
       <file leaf-file-name="StartDialogHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSide/StartDialogHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="641" max-vertical-offset="1598">
-              <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2924">
+              <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
               <folding>
-                <element signature="docComment;class#StartDialogHandler#0" expanded="false" />
-                <element signature="method#StartDialogHandler#0;class#StartDialogHandler#0" expanded="false" />
-                <element signature="docComment;method#onOK#0;class#StartDialogHandler#0" expanded="false" />
-                <element signature="method#onOK#0;class#StartDialogHandler#0" expanded="false" />
-                <element signature="class#1948:2456" expanded="false" />
-                <element signature="method#clientConnected#0;class#1948:2456" expanded="false" />
-                <element signature="method#clientDisconnected#0;class#1948:2456" expanded="false" />
-                <element signature="e#5883#5884#0" expanded="true" />
+                <element signature="e#4718#5854#0" expanded="true" />
+                <element signature="e#5843#5844#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,7 +140,7 @@
       <file leaf-file-name="SettingsWindow.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSide/Interfaces/Gui/Windows/SettingsWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="442">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -115,14 +150,9 @@
       <file leaf-file-name="SettingsDialog.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientSide/GUI/SettingsDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1513">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1581" max-vertical-offset="1887">
               <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
-              <folding>
-                <element signature="e#2265#2266#0" expanded="true" />
-                <element signature="e#2298#2299#0" expanded="true" />
-                <element signature="e#2352#2353#0" expanded="true" />
-                <element signature="e#2389#2390#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,19 +205,19 @@
         <option value="$PROJECT_DIR$/src/Net/NetworkClient.java" />
         <option value="$PROJECT_DIR$/src/ServerSide/ChatServer.java" />
         <option value="$PROJECT_DIR$/src/ClientSide/Main.java" />
-        <option value="$PROJECT_DIR$/src/ClientSide/Registrar.java" />
-        <option value="$PROJECT_DIR$/src/ServerSide/ChatServerHandler.java" />
         <option value="$PROJECT_DIR$/src/ClientSide/GUI/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/ClientSide/GUI/StartDialog.java" />
         <option value="$PROJECT_DIR$/src/ClientSide/GUI/RegisterDialog.form" />
-        <option value="$PROJECT_DIR$/src/ClientSide/Client.java" />
         <option value="$PROJECT_DIR$/src/ClientSide/GlobalConfig.java" />
         <option value="$PROJECT_DIR$/src/ClientSide/Interfaces/Gui/Windows/SettingsWindow.java" />
         <option value="$PROJECT_DIR$/src/ClientSide/GUI/SettingsDialog.java" />
-        <option value="$PROJECT_DIR$/src/ClientSide/StartDialogHandler.java" />
-        <option value="$PROJECT_DIR$/src/ClientSide/GUI/StartDialog.form" />
         <option value="$PROJECT_DIR$/src/ClientSide/WindowsManager.java" />
         <option value="$PROJECT_DIR$/src/ClientSide/GUI/PrivateWindow.java" />
+        <option value="$PROJECT_DIR$/src/ClientSide/GUI/StartDialog.form" />
+        <option value="$PROJECT_DIR$/src/ClientSide/Registrar.java" />
+        <option value="$PROJECT_DIR$/src/ClientSide/Client.java" />
+        <option value="$PROJECT_DIR$/src/ClientSide/StartDialogHandler.java" />
+        <option value="$PROJECT_DIR$/src/ServerSide/ChatServerHandler.java" />
       </list>
     </option>
   </component>
@@ -353,7 +383,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -599,6 +628,10 @@
               <option name="myItemId" value="GUI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StartDialog" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -621,13 +654,10 @@
               <option name="myItemId" value="GUI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PrivateWindow" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1041,11 +1071,12 @@
       <workItem from="1412860709105" duration="8198000" />
       <workItem from="1412872556265" duration="5720000" />
       <workItem from="1412920365846" duration="8068000" />
+      <workItem from="1412935393457" duration="702000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83791000" />
+    <option name="totallyTimeSpent" value="84493000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1131,7 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="425">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,7 +1177,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="544">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,6 +1186,8 @@
           <caret line="113" column="1" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#messageReceived#0;class#ChatServerHandler#0" expanded="false" />
+            <element signature="method#receiveRegistrationMessage#0;class#ChatServerHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1165,7 +1196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1598" max-vertical-offset="1938">
           <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,9 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="527">
           <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1185,6 +1212,8 @@
           <caret line="119" column="27" selection-start-line="119" selection-start-column="14" selection-end-line="119" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#messageReceived#0;class#ChatServerHandler#0" expanded="false" />
+            <element signature="method#receiveRegistrationMessage#0;class#ChatServerHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1201,7 +1230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="2278">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1211,6 +1239,8 @@
           <caret line="74" column="93" selection-start-line="74" selection-start-column="93" selection-end-line="74" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#messageReceived#0;class#ChatServerHandler#0" expanded="false" />
+            <element signature="method#receiveRegistrationMessage#0;class#ChatServerHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1234,7 +1264,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="981" max-vertical-offset="1700">
           <caret line="80" column="20" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1329,7 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1337,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="493">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1345,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="561">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1353,9 +1379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
           <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1374,7 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1382,7 +1404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="1224">
           <caret line="10" column="26" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1390,7 +1411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="1632">
           <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1428,39 +1448,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientSide/Registrar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2261">
-          <caret line="50" column="76" selection-start-line="50" selection-start-column="76" selection-end-line="50" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerSide/ChatServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9001386" vertical-offset="0" max-vertical-offset="3332">
-          <caret line="128" column="51" selection-start-line="128" selection-start-column="51" selection-end-line="128" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientSide/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1734">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientSide/GlobalConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="1088">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1476,40 +1468,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="1513">
           <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
-          <folding>
-            <element signature="e#2265#2266#0" expanded="true" />
-            <element signature="e#2298#2299#0" expanded="true" />
-            <element signature="e#2352#2353#0" expanded="true" />
-            <element signature="e#2389#2390#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientSide/GUI/SettingsDialog.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientSide/GUI/StartDialog.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientSide/StartDialogHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="641" max-vertical-offset="1598">
-          <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
-          <folding>
-            <element signature="docComment;class#StartDialogHandler#0" expanded="false" />
-            <element signature="method#StartDialogHandler#0;class#StartDialogHandler#0" expanded="false" />
-            <element signature="docComment;method#onOK#0;class#StartDialogHandler#0" expanded="false" />
-            <element signature="method#onOK#0;class#StartDialogHandler#0" expanded="false" />
-            <element signature="class#1948:2456" expanded="false" />
-            <element signature="method#clientConnected#0;class#1948:2456" expanded="false" />
-            <element signature="method#clientDisconnected#0;class#1948:2456" expanded="false" />
-            <element signature="e#5883#5884#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="uml://JAVA/ClientSide.GUI.MainWindow">
@@ -1521,12 +1486,12 @@
             <node x="" y="">Net.NetworkClient</node>
             <node x="" y="">ClientSide.Interfaces.WindowsHandler</node>
             <node x="" y="">ClientSide.Interfaces.Gui.Listeners.OkClickedListener</node>
-            <node x="" y="">ClientSide.Interfaces.Gui.Listeners.StartDialogListener</node>
             <node x="" y="">Net.Logging.XMLSingleBranchedRegistrar</node>
+            <node x="" y="">ClientSide.Interfaces.Gui.Listeners.StartDialogListener</node>
             <node x="" y="">ClientSide.Interfaces.Gui.Windows.SettingsWindow</node>
-            <node x="" y="">ClientSide.GUI.MainWindow</node>
-            <node x="" y="">ClientSide.Registrar</node>
             <node x="" y="">ClientSide.Main</node>
+            <node x="" y="">ClientSide.Registrar</node>
+            <node x="" y="">ClientSide.GUI.MainWindow</node>
             <node x="" y="">ServerSide.ServerHandler</node>
             <node x="" y="">Net.Logging.XMLSingleBranchedLogger</node>
             <node x="" y="">Net.Logging.XMLSingleBranchedConfigurator</node>
@@ -1543,21 +1508,21 @@
             <node x="" y="">ClientSide.GlobalConfig</node>
             <node x="" y="">Net.Logging.XMLSingleBranchedExplorer</node>
             <node x="" y="">ServerSide.ChatServer</node>
-            <node x="" y="">ClientSide.Interfaces.Gui.Windows.StartWindow</node>
             <node x="" y="">ClientSide.WindowsManager</node>
+            <node x="" y="">ClientSide.Interfaces.Gui.Windows.StartWindow</node>
             <node x="" y="">ClientSide.Interfaces.Configuration</node>
-            <node x="" y="">Net.Messages</node>
-            <node x="" y="">ClientSide.GUI.RegisterDialog</node>
             <node x="" y="">ClientSide.GUI.PrivateWindow</node>
+            <node x="" y="">ClientSide.GUI.RegisterDialog</node>
+            <node x="" y="">Net.Messages</node>
             <node x="" y="">ClientSide.GUI.StartDialog</node>
             <node x="" y="">ClientSide.Interfaces.Gui.Listeners.PrivateWindowListener</node>
-            <node x="" y="">Net.Logging.XMLSingleBranched</node>
             <node x="" y="">ClientSide.Interfaces.Gui.Showable</node>
+            <node x="" y="">Net.Logging.XMLSingleBranched</node>
             <node x="" y="">ClientSide.GUI.SettingsDialog</node>
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.30000000000000004" x="674.6666666666663" y="787.3333333333333" />
+          <settings layout="Hierarchic Group" zoom="0.30000000000000004" x="675.0" y="787.0" />
           <SelectedNodes />
           <Categories />
           <SCOPE>All</SCOPE>
@@ -1581,13 +1546,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientSide/GUI/StartDialog.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientSide/GUI/PrivateWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7671233" vertical-offset="242" max-vertical-offset="1615">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="242" max-vertical-offset="1615">
+          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
           <folding>
-            <element signature="e#1050#1528#0" expanded="true" />
             <element signature="e#1517#1518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientSide/Registrar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="2261">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientSide/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="1734">
+          <caret line="39" column="107" selection-start-line="39" selection-start-column="107" selection-end-line="39" selection-end-column="107" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1161#1162#0" expanded="true" />
+            <element signature="e#1200#1201#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#1513#1514#0" expanded="true" />
+            <element signature="e#1564#1565#0" expanded="true" />
+            <element signature="e#1594#1595#0" expanded="true" />
+            <element signature="e#1635#1636#0" expanded="true" />
+            <element signature="e#1665#1666#0" expanded="true" />
+            <element signature="e#1739#1740#0" expanded="true" />
+            <element signature="e#1768#1769#0" expanded="true" />
+            <element signature="e#1848#1849#0" expanded="true" />
+            <element signature="e#1903#1904#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientSide/StartDialogHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2924">
+          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+          <folding>
+            <element signature="e#4718#5854#0" expanded="true" />
+            <element signature="e#5843#5844#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerSide/ChatServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4312321" vertical-offset="804" max-vertical-offset="2635">
+          <caret line="111" column="59" selection-start-line="111" selection-start-column="59" selection-end-line="111" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#messageReceived#0;class#ChatServerHandler#0" expanded="false" />
+            <element signature="method#receiveRegistrationMessage#0;class#ChatServerHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
