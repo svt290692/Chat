@@ -1,5 +1,6 @@
 package ClientSide.Interfaces;
 
+import ClientSide.Interfaces.Gui.Listeners.PrivateWindowListener;
 import com.jme3.network.Client;
 import com.jme3.network.ClientStateListener;
 import com.jme3.network.MessageListener;

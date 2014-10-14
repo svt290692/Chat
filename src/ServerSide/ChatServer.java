@@ -15,8 +15,9 @@ import java.io.IOException;
  */
 public class ChatServer {
     static{
-        Serializer.registerClasses(PrivateMessage.class,ServerMessage.class, LogPass.class,
-                ClientRequestMessage.class, NetworkClient.class);
+        Serializer.registerClasses(RegistrationMessage.class, PrivateMessage.class, InitializationMessage.class,
+                GlobalMessage.class, ConferenceMessage.class,ServerMessage.class, LogPass.class,
+                RequestMessage.class, NetworkClient.class);
     }
     Server server;
 

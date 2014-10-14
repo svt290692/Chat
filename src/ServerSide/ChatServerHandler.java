@@ -60,8 +60,14 @@ public class ChatServerHandler implements ServerHandler {
 
         System.out.println("New Message receive to server: " + message);
         try {
-            if (message instanceof ClientRequestMessage) {
-                receiveRequestMessage((ClientRequestMessage)message,hostedConnection);
+            if (message instanceof RegistrationMessage) {
+                receiveRegistrationMessage((RegistrationMessage)message,hostedConnection);
+
+            } else if (message instanceof InitializationMessage) {
+                receiveInitializationMessage((InitializationMessage) message,hostedConnection);
+
+            } else if (message instanceof RequestMessage) {
+                receiveRequestMessage((RequestMessage)message,hostedConnection);
 
             } else if (message instanceof PrivateMessage) {
                 receivePrivateMessage((PrivateMessage) message);
@@ -72,52 +78,52 @@ public class ChatServerHandler implements ServerHandler {
         }
     }
 
-//    private void receiveRegistrationMessage(RegistrationMessage message,HostedConnection connection)throws IOException{
-//        ServerMessage msg = new ServerMessage();
-//        boolean isLogCorrect = checkWithRegExp(message.getLogPass().getLogin(), message.getLogPass().getPassword());
-//        boolean isLoginExists = registrar.isAccountExists(REG_FILE_NAME, message.getLogPass().getLogin());
-//        if(isLogCorrect && !isLoginExists) {
-//            registrar.writeAccount(REG_FILE_NAME, message.getLogPass().getLogin(), message.getLogPass().getPassword());
-//
-//            msg.setType(TypeServerMessage.ALLOW_REGISTRATION);
-//        } else{
-//            msg.setType(TypeServerMessage.DENIED_REGISTRATION);
-//            if(!isLogCorrect){
-//                msg.setMessage("You entered incorrect login or password. Try again.");
-//            }
-//            else{
-//                msg.setMessage("this login already exists");
-//            }
-//        }
-//
-//        connection.send(msg);
-//
-//
-//    }
+    private void receiveRegistrationMessage(RegistrationMessage message,HostedConnection connection)throws IOException{
+        ServerMessage msg = new ServerMessage();
+        boolean isLogCorrect = checkWithRegExp(message.getLogPass().getLogin(), message.getLogPass().getPassword());
+        boolean isLoginExists = registrar.isAccountExists(REG_FILE_NAME, message.getLogPass().getLogin());
+        if(isLogCorrect && !isLoginExists) {
+            registrar.writeAccount(REG_FILE_NAME, message.getLogPass().getLogin(), message.getLogPass().getPassword());
 
-//    private void receiveInitializationMessage(ClientRequestMessage message,HostedConnection connection) throws IOException{
-//        ServerMessage servMsg = new ServerMessage();
-//
-//        if (!registrar.isAccountExists(REG_FILE_NAME,
-//                message.getLogPass().getLogin(),
-//                message.getLogPass().getPassword())) {
-//
-//            servMsg.setType(TypeServerMessage.DENIED_LOGIN);
-//            servMsg.setMessage("This user is not registered");
-//        } else {
-//            servMsg.setType(TypeServerMessage.ALLOW_LOGIN);
-//            addNewClient(message.getLogPass().getLogin(),connection);
-//        }
-//
-//        connection.send(servMsg);
-//        mServer.broadcast(createClientInformationMessage());
-//    }
+            msg.setType(TypeMessage.ALLOW_REGISTRATION);
+        } else{
+            msg.setType(TypeMessage.DENIED_REGISTRATION);
+            if(!isLogCorrect){
+                msg.setMessage("You entered incorrect login or password. Try again.");
+            }
+            else{
+                msg.setMessage("this login already exists");
+            }
+        }
 
-    private void receiveRequestMessage(ClientRequestMessage message,HostedConnection connection)throws IOException{
-        if (message.getRequestType().equals(ClientRequestMessage.RequestType.CLIENT_LIST)) {
+        connection.send(msg);
+
+
+    }
+
+    private void receiveInitializationMessage(InitializationMessage message,HostedConnection connection) throws IOException{
+        ServerMessage servMsg = new ServerMessage();
+
+        if (!registrar.isAccountExists(REG_FILE_NAME,
+                message.getLogPass().getLogin(),
+                message.getLogPass().getPassword())) {
+
+            servMsg.setType(TypeMessage.DENIED_LOGIN);
+            servMsg.setMessage("This user is not registered");
+        } else {
+            servMsg.setType(TypeMessage.ALLOW_LOGIN);
+            addNewClient(message.getLogPass().getLogin(),connection);
+        }
+
+        connection.send(servMsg);
+        mServer.broadcast(createClientInformationMessage());
+    }
+
+    private void receiveRequestMessage(RequestMessage message,HostedConnection connection)throws IOException{
+        if (message.getRequestType().equals(RequestMessage.RequestType.CLIENT_LIST)) {
             mServer.broadcast(createClientInformationMessage());
         }
-        else if(message.getRequestType().equals(ClientRequestMessage.RequestType.HISTORY)) {
+        else if(message.getRequestType().equals(RequestMessage.RequestType.HISTORY)) {
             List<String> log = messageLogger.readLog(message.getMessage().split(" "));
 
 //            StringBuffer sf = new StringBuffer();
@@ -126,7 +132,7 @@ public class ChatServerHandler implements ServerHandler {
 //                sf.append(' ');
 //            }
 //            sf.deleteCharAt(sf.length()-1);
-            ServerMessage servMessage = new ServerMessage(message.getMessage(), TypeServerMessage.HISTORY_LOG, log);
+            ServerMessage servMessage = new ServerMessage(message.getMessage(), TypeMessage.HISTORY_LOG, log);
 
             connection.send(servMessage);
         }
@@ -153,17 +159,17 @@ public class ChatServerHandler implements ServerHandler {
         }catch (IOException ex){
             ex.printStackTrace();
         }
-        return new ServerMessage(null, TypeServerMessage.CLIENTS_INFORMATION,namesAndStatus);
+        return new ServerMessage(null,TypeMessage.CLIENTS_INFORMATION,namesAndStatus);
     }
 
-//    public static boolean checkWithRegExp(String ... str){
-//        Pattern p = Pattern.compile("^\\w+$");
-//        for(String s : str) {
-//            if(!(p.matcher(s).matches()))
-//            return false;
-//        }
-//        return true;
-//    }
+    public static boolean checkWithRegExp(String ... str){
+        Pattern p = Pattern.compile("^\\w+$");
+        for(String s : str) {
+            if(!(p.matcher(s).matches()))
+            return false;
+        }
+        return true;
+    }
 
     private void addNewClient(String name,HostedConnection conn){
         mActiveLogInClients.put(name, conn);

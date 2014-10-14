@@ -7,25 +7,27 @@ import com.jme3.network.serializing.Serializable;
  * Created by svt on 07.10.2014.
  */
 @Serializable
-public class ClientRequestMessage extends AbstractMessage{
+public class RequestMessage extends AbstractMessage{
     private String message;
 
     private RequestType requestType;
 
-    private Object restrictedObject;
     public static enum RequestType implements java.io.Serializable{
         CLIENT_LIST,
-        HISTORY,
-        INITIALIZATION;
+        HISTORY;
 
         RequestType() {
         }
     }
 
-    public ClientRequestMessage() {
+    public RequestMessage() {
     }
 
-    public ClientRequestMessage(String message, RequestType requestType) {
+    public RequestMessage(String message) {
+        this.message = message;
+    }
+
+    public RequestMessage(String message, RequestType requestType) {
         this.message = message;
         this.requestType = requestType;
     }
@@ -46,20 +48,11 @@ public class ClientRequestMessage extends AbstractMessage{
         this.requestType = requestType;
     }
 
-    public Object getRestrictedObject() {
-        return restrictedObject;
-    }
-
-    public void setRestrictedObject(Object restrictedObject) {
-        this.restrictedObject = restrictedObject;
-    }
-
     @Override
     public String toString() {
-        return "ClientRequestMessage{" +
+        return "RequestMessage{" +
                 "message='" + message + '\'' +
                 ", requestType=" + requestType +
-                ", restrictedObject=" + restrictedObject +
                 '}';
     }
 
@@ -68,12 +61,10 @@ public class ClientRequestMessage extends AbstractMessage{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ClientRequestMessage that = (ClientRequestMessage) o;
+        RequestMessage that = (RequestMessage) o;
 
         if (message != null ? !message.equals(that.message) : that.message != null) return false;
         if (requestType != that.requestType) return false;
-        if (restrictedObject != null ? !restrictedObject.equals(that.restrictedObject) : that.restrictedObject != null)
-            return false;
 
         return true;
     }
@@ -82,7 +73,6 @@ public class ClientRequestMessage extends AbstractMessage{
     public int hashCode() {
         int result = message != null ? message.hashCode() : 0;
         result = 31 * result + (requestType != null ? requestType.hashCode() : 0);
-        result = 31 * result + (restrictedObject != null ? restrictedObject.hashCode() : 0);
         return result;
     }
 }

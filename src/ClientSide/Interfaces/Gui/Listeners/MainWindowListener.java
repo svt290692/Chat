@@ -1,11 +1,12 @@
 package ClientSide.Interfaces.Gui.Listeners;
 
-import java.util.Collection;
+import ClientSide.Interfaces.Gui.Windows.PrivateWindow;
 
 /**
  * Created by svt on 02.10.2014.
  */
 public interface MainWindowListener {
-    void sendMessageTo(String message,Collection<String> names);
-
+    void onMainWindowExit();
+    void onLogOut();
+    void requestPrivateChat(String when);
 }

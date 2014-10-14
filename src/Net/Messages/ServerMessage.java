@@ -9,18 +9,18 @@ import com.jme3.network.serializing.Serializable;
 @Serializable
 public class ServerMessage extends AbstractMessage{
     private String message;
-    private TypeServerMessage type;
+    private TypeMessage type;
 
     private Object DataObject;
     public ServerMessage() {
     }
 
-    public ServerMessage(String message, TypeServerMessage type) {
+    public ServerMessage(String message, TypeMessage type) {
         this.message = message;
         this.type = type;
     }
 
-    public ServerMessage(String message, TypeServerMessage type, Object dataObject) {
+    public ServerMessage(String message, TypeMessage type, Object dataObject) {
         this.message = message;
         this.type = type;
         DataObject = dataObject;
@@ -39,11 +39,11 @@ public class ServerMessage extends AbstractMessage{
         DataObject = dataObject;
     }
 
-    public TypeServerMessage getType() {
+    public TypeMessage getType() {
         return type;
     }
 
-    public void setType(TypeServerMessage type) {
+    public void setType(TypeMessage type) {
         this.type = type;
     }
 
