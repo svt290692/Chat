@@ -4,119 +4,178 @@ import ClientSide.Interfaces.Gui.Listeners.MainWindowListener;
 import Net.NetworkClient;
 
 import javax.swing.*;
-import java.awt.event.*;
-import java.io.File;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.*;
 import java.util.List;
 
 /**
- * Created by svt on 02.10.2014.
+ * Created by svt on 11.10.2014.
  */
-public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow
-{
-    private JPanel MainPanel;
-    private JButton B_sendLS;
+public class MainWindow implements ClientSide.Interfaces.Gui.Windows.MainWindow {
+    private JPanel PANEL_main;
+    private JTextField TF_message;
+    private JButton B_send;
     private JList LIST_users;
-    private JButton B_Exit;
-    private JButton B_logOut;
+    private JTextPane TP_chat;
+    private JButton B_history;
 
-    DefaultListModel usersModel;
+    DefaultListModel listModel;
+
+    private Color lime = new Color(50,205,50);
 
     MainWindowListener mListener;
 
-    JFrame MainFrame;
-
     public MainWindow() {
-        MainFrame = new JFrame();
-        MainFrame.setContentPane(MainPanel);
-        MainFrame.pack();
-        MainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        JFrame frame = new JFrame();
+        frame.setLocation(300,300);
+        frame.setContentPane(PANEL_main);
+        frame.pack();
+        frame.setVisible(true);
 
-        usersModel = new DefaultListModel();
-        LIST_users.setModel(usersModel);
+        listModel = new DefaultListModel();
+        LIST_users.setModel(listModel);
+        listModel.addElement("ВАСЯ (тут)");
+        listModel.addElement("ПЕтя(тут)");
+        listModel.addElement("Юля(там)");
+        listModel.addElement("билл гейтс (там)");
 
-        B_Exit.addActionListener(new ActionListener() {
+
+        LIST_users.setCellRenderer(new DefaultListCellRenderer(){
             @Override
-            public void actionPerformed(ActionEvent e) {
-                mListener.onMainWindowExit();
+            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+                Component comp = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                if(value.toString().endsWith("(тут)"))
+                     comp.setForeground(Color.GREEN);
+                else
+                    comp.setForeground(Color.BLUE);
+
+                return comp;
             }
         });
-        B_logOut.addActionListener(new ActionListener() {
+
+        LIST_users.setSelectionModel(new DefaultListSelectionModel() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                mListener.onLogOut();
-            }
-        });
-        B_sendLS.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                mListener.requestPrivateChat(usersModel.get(LIST_users.getLeadSelectionIndex()).toString().split(" ")[0]);
-                System.out.println("DEBUG MESSAGE: request private chat with"
-                        + usersModel.get(LIST_users.getLeadSelectionIndex()).toString().split(" ")[0]);
-            }
-        });
-        LIST_users.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                if(e.getClickCount() == 2){
-                    mListener.requestPrivateChat(usersModel.get(LIST_users.getLeadSelectionIndex()).toString().split(" ")[0]);
-                    System.out.println("DEBUG MESSAGE: request private chat with"
-                            + usersModel.get(LIST_users.getLeadSelectionIndex()).toString().split(" ")[0]);
+            public void setSelectionInterval(int index0, int index1) {
+                if(super.isSelectedIndex(index0)) {
+                    super.removeSelectionInterval(index0, index1);
+                }
+                else {
+                    super.addSelectionInterval(index0, index1);
                 }
             }
         });
-    }
-    public static void main(String args[]){
-        new File("dir").mkdir();
+
+        addLineToChat("[11:52 для ВАСЯ] Привет Василий!",lime);
+        addLineToChat("[11:52 от ВАСЯ] Привет Как дела?",Color.yellow);
+        addLineToChat("[11:52 для ВАСЯ,Юля] Привет Коллеги",lime);
+
+        TF_message.getRootPane().setDefaultButton(B_send);
+
+        B_send.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(false == TF_message.getText().isEmpty())
+                mListener.sendMessageTo(TF_message.getText(),LIST_users.getSelectedValuesList());
+            }
+        });
+
+//        LIST_users.addMouseListener(new MouseInputAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                if(mSelectionSet.contains(LIST_users.getSelectedIndex())){
+//                    mSelectionSet.remove(LIST_users.getSelectedIndex());
+//                }else{
+//                    mSelectionSet.add(LIST_users.getSelectedIndex());
+//                }
+//
+//                List<Integer> arr1 = new ArrayList<Integer>(mSelectionSet);
+//
+//                int[] arr = new int[arr1.size()];
+//
+//                for(int i = 0 ; i < arr1.size();i++){
+//                    arr[i] = arr1.get(i);
+//                }
+//
+//                LIST_users.setSelectedIndices(arr);
+//
+//            }
+//        });
+//        LIST_users.addListSelectionListener(new ListSelectionListener() {
+//            @Override
+//            public void valueChanged(ListSelectionEvent e) {
+//                if(LIST_users.isSelectedIndex(e.getFirstIndex())){
+//                    LIST_users.addSelectionInterval(e.getFirstIndex(),e.getFirstIndex());
+//                }
+//            }
+//        });
+//        ListSelectionModel lm = new DefaultListSelectionModel(){
+//            @Override
+//            public void removeSelectionInterval(int index0, int index1) {
+////                super.removeSelectionInterval(index0, index1);
+//            }
+//
+//            @Override
+//            public void removeIndexInterval(int index0, int index1) {
+////                super.removeIndexInterval(index0, index1);
+//            }
+//
+//        };
+//        LIST_users.setSelectionModel(lm);
     }
 
     @Override
-    public boolean addUser(Object user) {
-        if(usersModel.contains(user))
-            return false;
-        usersModel.addElement(user);
-        return true;
+    public void outsideMessage(String message, String nameFrom, boolean insertDate, boolean insertTime){
+        addLineToChat(message,Color.yellow);
     }
 
     @Override
-    public boolean addUser(Object user, int insertIndex) {
-        if(usersModel.contains(user))
-            return false;
-        usersModel.insertElementAt(user,insertIndex);
-        return true;
+    public void setListener(MainWindowListener mListener) {
+        this.mListener = mListener;
     }
 
     @Override
-    public boolean removeUser(Object user) {
-        return usersModel.removeElement(user);
+    public void addUser(String name, boolean isOnline){
+        listModel.addElement(name + " " + (isOnline ? "(тут)" : "(там)"));
     }
 
     @Override
-    public boolean removeUser(int index) {
-        return usersModel.removeElement(index);
-    }
-
-
-    @Override
-    public void setUsersAndStatusesList(List<NetworkClient> users) {
-        usersModel.clear();
-
-        for(NetworkClient client : users){
-            addUser(client.getName() + " " +(client.isOnline() ? "(online)" : "(offline)"));
+    public void changeUserStatus(String name, boolean isOnline){
+        if(listModel.contains(name + " " + "(тут)")){
+            int i = listModel.indexOf(name + " " + "(тут)");
+            listModel.setElementAt(name + " " + (isOnline ? "(тут)" : "(там)"),i);
+        }
+        else if(listModel.contains(name + " " + "(там)")){
+            int i = listModel.indexOf(name + " " + "(там)");
+            listModel.setElementAt(name + " " + (isOnline ? "(тут)" : "(там)"),i);
         }
     }
 
     @Override
-    public void setListener(MainWindowListener listener) {
-        mListener = listener;
+    public void setUsersAndStatusesList(List<NetworkClient> users) {
+
     }
 
     @Override
     public JFrame getFrame() {
-        return MainFrame;
+        return null;
     }
 
-    @Override
-    public void show() {
-        MainFrame.setVisible(true);
+    private void addLineToChat(String text, Color backgroundColor){
+        try {
+            TP_chat.getStyledDocument().insertString(TP_chat.getStyledDocument().getLength(), text + "\n",
+                    StyleContext.getDefaultStyleContext().addAttribute(SimpleAttributeSet.EMPTY,
+                            StyleConstants.Background, backgroundColor));
+        } catch (BadLocationException ignore) { }
+    }
+
+    public static void main(String args[]) throws InterruptedException {
+        ClientSide.Interfaces.Gui.Windows.MainWindow win = new MainWindow();
+        Thread.currentThread().join();
     }
 }
